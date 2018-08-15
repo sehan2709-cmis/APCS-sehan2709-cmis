@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Fundamentalist
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ dataTypes()
+comment3.params=a\ b
+comment3.target=void\ add(int,\ int)
+numComments=4
