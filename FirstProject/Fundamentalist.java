@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Random;
+
 public class Fundamentalist
 {
     public static void main(String args[]){
@@ -15,7 +17,7 @@ public class Fundamentalist
 
         System.out.println();
         System.out.println();
-        
+
         Scanner sc = new Scanner(System.in);
         int n1;
         int n2;
@@ -29,7 +31,7 @@ public class Fundamentalist
 
         System.out.println();
         System.out.println();
-        
+
         int n3;
         int n4;
         System.out.println("I will do a division. Give me a number");
@@ -42,7 +44,7 @@ public class Fundamentalist
 
         System.out.println();
         System.out.println();
-        
+
         int n5;
         int n6;
         System.out.println("Tell me two numbers that you want to be compare.");
@@ -50,10 +52,10 @@ public class Fundamentalist
         n6 = sc.nextInt();
         System.out.println();
         compare(n5, n6);
-        
+
         System.out.println();
         System.out.println();
-        
+
         int n7;
         System.out.println("Tell me the number that you want to see it is odd or even or 0!!!!\n - If you give me an even number, you will get 1. \n - If you give me an odd number, you will get -1.\n - If you give me a zero, you will get zero.");
         n7 = sc.nextInt();
@@ -140,4 +142,15 @@ public class Fundamentalist
         {return 1;}
         else
         {return -1;}}
+        
+    public static void suqareTable(){
+        int i = 1;
+        int in = i;
+        for (in = i; in <= 10; in++);
+        {
+            int s = in * in;
+            int r = (int)(Math.random()*((s - in)+1)+in);
+            System.out.format("%d\t%d\t%d\t", in, s, r);
+        }
+        }
 }
