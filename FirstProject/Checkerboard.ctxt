@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.target=Checkerboard
-comment1.params=hight\ width
+comment1.params=height\ width
 comment1.target=void\ cherckerboard(int,\ int)
 numComments=2
