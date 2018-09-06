@@ -7,7 +7,9 @@ public class Checkerboard
         String sharp = "";
         String border = "+";
         String work = "|";
-        int r = (int)(Math.random()*(10));
+        int r = (int)(Math.random()*(height));
+        int rr = (int)(Math.random()*(width));
+        int rrr = (int)(Math.random()*(10));
         for (int w = width; w > 0; w--){
             border += "-";
         }
@@ -17,21 +19,50 @@ public class Checkerboard
             System.out.print("|");
             for (int w = 0; w < width; w++){
                 if (w % 2 == 0){
-                    if (h % 2 ==0){
-                        System.out.print("#");
+                    if (w == rr){
+                        if (h % 2 == 0){
+                            System.out.print("#");
+                        }
+                        else if (h % 2 ==1){
+                            if (h != r){
+                                System.out.print(" ");
+                            }
+                            else if (h == r){
+                                System.out.print(rrr);
+                            }
+                        }
                     }
-                    else if (h % 2 ==1){
-                        System.out.print(" ");
+                    else if(w != rr){
+                        if (h % 2 == 0){
+                            System.out.print("#");
+                        }
+                        else if (h % 2 ==1){
+                            System.out.print(" ");
+                        }
                     }
                 }
                 else if (w % 2 == 1){
-                    if (h % 2 ==0){
-                        System.out.print(" ");
+                    if (w == rr){
+                        if (h % 2 == 1){
+                            if (h == r){
+                                System.out.print(rrr);
+                            }
+                            else if (h != r){
+                                System.out.print("#");
+                            }
+                        }
+                        else if (h % 2 == 0){
+                            System.out.print(" ");
+                        }
                     }
-                    else if (h % 2 ==1){
-                        System.out.print("#");
+                    else if(w != rr){
+                        if (h % 2 ==0){
+                            System.out.print(" ");
+                        }
+                        else if (h % 2 == 1){
+                            System.out.print("#");
+                        }
                     }
-                
                 }
                 if (w == width-1){
                     String right = "|\n";
@@ -41,5 +72,6 @@ public class Checkerboard
             }
         }
         System.out.println(border);
+        System.out.println(" ");
     }
 }
