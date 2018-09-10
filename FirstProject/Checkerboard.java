@@ -19,20 +19,20 @@ public class Checkerboard
             System.out.print("|");
             for (int w = 0; w < width; w++){
                 if (w % 2 == 0){
-                    if (w == rr){
+                    if (w == r){
                         if (h % 2 == 0){
-                            System.out.print("#");
-                        }
-                        else if (h % 2 ==1){
-                            if (h != r){
-                                System.out.print(" ");
+                            if (h != rr){
+                                System.out.print("#");
                             }
-                            else if (h == r){
+                            else if (h == rr){
                                 System.out.print(rrr);
                             }
                         }
+                        if (h % 2 == 1){
+                            System.out.print(" ");
+                        }
                     }
-                    else if(w != rr){
+                    else if(w != r){
                         if (h % 2 == 0){
                             System.out.print("#");
                         }
@@ -42,20 +42,20 @@ public class Checkerboard
                     }
                 }
                 else if (w % 2 == 1){
-                    if (w == rr){
+                    if (w == r){
                         if (h % 2 == 1){
-                            if (h == r){
+                            if (h == rr){
                                 System.out.print(rrr);
                             }
-                            else if (h != r){
+                            else if (h != rr){
                                 System.out.print("#");
                             }
                         }
-                        else if (h % 2 == 0){
+                        else if(h%2==0){
                             System.out.print(" ");
                         }
                     }
-                    else if(w != rr){
+                    else if(w != r){
                         if (h % 2 ==0){
                             System.out.print(" ");
                         }
