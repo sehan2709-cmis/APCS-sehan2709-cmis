@@ -2,7 +2,7 @@ public class cb
 {
     public static void main(String args[])
     {
-        System.out.println(cb(8, 6));
+        System.out.println(Checkerboard(8, 6));
     }
     
     public static String Checkerboard(int h, int w){
