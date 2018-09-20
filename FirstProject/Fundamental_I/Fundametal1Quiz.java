@@ -1,3 +1,5 @@
+package Fundamental_I;
+
 import java.util.Scanner;
 
 public class Fundametal1Quiz

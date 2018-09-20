@@ -1,3 +1,5 @@
+package Fundamental_I;
+
 public class again{
     public static int method1(int a, int b, int c){
         int AxB = a * b;

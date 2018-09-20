@@ -1,3 +1,5 @@
+package Fundamental_I;
+
 import java.util.Scanner;
 import java.util.Random;
 
