@@ -2,4 +2,6 @@
 comment0.target=Fundamentals_II
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=integers\ skip
+comment2.target=void\ printArray(int[],\ boolean)
+numComments=3
