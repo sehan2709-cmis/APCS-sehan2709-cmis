@@ -12,25 +12,25 @@ public class Fundamentals_II
 
     public static void printArray(int[] array, boolean skip)
     {
-        int[] result = new int [ array.length ];
-        if(skip == true)
+        int x = 0;
+        int y = 0;
+        if( skip == true )
         {
-            for( int index = 0; index < array.length; index++ )
+            while( x < array.length )
             {
-                if( index % 2 == 1 )
-                {
-                    result[ index ] = index;
-                }
+                System.out.print(array[x] + " ");
+                x += 2;
             }
         }
         else
         {
-            for( int index = 0; index < array.length; index++ )
+            while( y < array.length )
             {
-                result[ index ] = index;
+                System.out.print(array[y] + " ");
+                y += 1;
             }
         }
-        System.out.println(result);
+        System.out.print("\n");
     }
 
     public static void printArray(double[] array, boolean skip)
