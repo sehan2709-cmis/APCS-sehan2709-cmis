@@ -2,6 +2,12 @@
 comment0.target=Fundamentals_II
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=integers\ skip
+comment2.params=array\ skip
 comment2.target=void\ printArray(int[],\ boolean)
-numComments=3
+comment3.params=array\ skip
+comment3.target=void\ printArray(double[],\ boolean)
+comment4.params=array\ skip
+comment4.target=void\ printArray(java.lang.String[],\ boolean)
+comment5.params=array\ skip
+comment5.target=void\ printArray(boolean[],\ boolean)
+numComments=6
