@@ -264,22 +264,42 @@ public class Fundamentals_II
         int[] array = new int[a.length + b.length];
         int x = 0;
         int y = 0;
-        int z = 0;
-        int n = 0;
-        while ( z <= array.length+2  )
+        int w = 0;
+        while (y < array.length)
         {
-            if ( x < a.length)
+            if( x < a.length)
             {
-                array[z] = a[x];
+                array[y] = a[x];
+                x += 1;
+                y += 1;
             }
-            if ( y < b.length)
+            if( w < b.length)
             {
-                array[z+1] = b[y];
+                array[y] = b[w];
+                y += 1;
+                w += 1;
             }
-            x += 1;
-            y += 1;
-            z += 2;
         }
         return array;
+    }
+    
+    public static void reverse(int[] array)
+    {
+        int[] errey = new int[array.length];
+        int x = array.length-1;
+        int o = 0;
+        while ( x > 0 )
+        {
+            errey[o] += array[x];
+            x -= 1;
+        }
+        int y = 0;
+        while ( y < array.length )
+        {
+            array[y] = errey[y];
+            System.out.print( array[y] + " " );
+            y++;
+        }
+        
     }
 }
