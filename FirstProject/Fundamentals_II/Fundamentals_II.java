@@ -282,24 +282,57 @@ public class Fundamentals_II
         }
         return array;
     }
-    
+
     public static void reverse(int[] array)
     {
-        int[] errey = new int[array.length];
-        int x = array.length-1;
-        int o = 0;
-        while ( x > 0 )
+        int[] reverse = new int[array.length];
+        int x = 0;
+        int y = array.length -1;
+        while( x < array.length )
         {
-            errey[o] += array[x];
-            x -= 1;
+            reverse[x] = array[y];
+            x++;
+            y--;
         }
+        int z = 0;
+        while( z< reverse.length)
+        {
+            System.out.print(reverse[z]);
+            z++;
+        }
+    }
+
+    public static int[] subArray(int[] array, int start, int stop)
+    {
+        int[] arry = new int[stop-start+1];
+        int x = 0;
+        while( start <= stop )
+        {
+            arry[x] = array[start];
+            start++;
+            x++;
+        }
+        return arry;
+    }
+
+    public static int[] compareArrays(int[] a, int[] b)
+    {
+        int c;
+        if (a.length >= b.length)
+        {
+            c = a.length;
+        }
+        else
+        {
+            c = b.length;
+        }
+        int x = 0;
         int y = 0;
-        while ( y < array.length )
+        int z = 0;
+        while (z < c)
         {
-            array[y] = errey[y];
-            System.out.print( array[y] + " " );
-            y++;
+            if( a[x] > 
+            z++;
         }
-        
     }
 }
