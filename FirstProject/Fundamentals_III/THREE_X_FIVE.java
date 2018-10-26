@@ -20,7 +20,7 @@ public class THREE_X_FIVE
     public static int[][] defaultArray(int h, int w)
     {
         int[][] result = new int [h][w];
-        int x = 0;
+        int x = 1;
         int hi = 0;
         int wi = 0;
         while( hi < h)

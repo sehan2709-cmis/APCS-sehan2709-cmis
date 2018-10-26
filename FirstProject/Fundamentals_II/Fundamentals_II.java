@@ -315,24 +315,123 @@ public class Fundamentals_II
         return arry;
     }
 
-    public static int[] compareArrays(int[] a, int[] b)
+    public static int[] compareArrays (int[] a, int[] b)
     {
-        int c;
-        if (a.length >= b.length)
+        int scoreA = 0;
+        int scoreB = 0;
+        int compareLength = 0;
+        int newA [];
+        int newB [];
+        if (a.length == b.length)
         {
-            c = a.length;
+            compareLength = a.length;
+            newA = a;
+            newB = b;
+        }
+        else if (a.length > b.length)
+        {
+            compareLength = a.length;
+            newB = new int [compareLength];
+            for (int length = 0; length < b.length; length ++)
+            {
+                newB [length] = b [length];
+            }
+            newA = a;
         }
         else
         {
-            c = b.length;
+            compareLength = b.length;
+            newA = new int [compareLength];
+            for (int length = 0; length < b.length; length ++)
+            {
+                newA [length] = a [length];
+            }
+            newB = b;
         }
-        int x = 0;
-        int y = 0;
-        int z = 0;
-        while (z < c)
+
+        for (int posit = 0; posit < compareLength; posit ++)
         {
-            if( a[x] > 
-            z++;
+            if (newA [posit] > newB [posit])
+            {
+                scoreA ++;
+            }   
+            else
+            {
+                scoreB ++;
+            }
         }
+
+        if (scoreA > scoreB)
+            return a;
+        else if (scoreB > scoreA)
+            return b;
+        else
+            return null;
+    }
+    //14
+    public static int[] minimize (int[] array, int threshold)
+    {
+        int[] result = new int [array.length];
+        for (int posit = 0; posit < array.length; posit ++)
+        {
+            if (array[posit] > threshold)
+                result[posit] = threshold;
+            else 
+                result[posit] = array[posit];
+        }
+        return result;
+    }
+    //15
+    public static void maximize(int[] array, int threshhold)
+    {
+        for (int posit = 0; posit < array.length; posit ++)
+        {
+            if (array[posit] < threshhold)
+                array[posit] = threshhold;
+            else 
+                array[posit] = array[posit];
+        }
+    }
+    //16
+    public static double[] maxMerge(double[] a, double[] b)
+    {
+        int scoreA = 0;
+        int scoreB = 0;
+        int compareLength = 0;
+        double [] newA;
+        double [] newB;
+        if (a.length == b.length)
+        {
+            compareLength = a.length;
+            newA = a;
+            newB = b;
+        }
+        else if (a.length > b.length)
+        {
+            compareLength = a.length;
+            newB = new double [compareLength];
+            for (int length = 0; length < b.length - 1; length ++)
+            {
+                newB [length] = b [length];
+            }
+            newA = a;
+        }
+        else
+        {
+            compareLength = b.length;
+            newA = new double [compareLength];
+            for (int length = 0; length < a.length - 1; length ++)
+            {
+                newA [length] = a [length];
+            }
+            newB = b;
+        }
+        double [] result = new double [compareLength];
+        for (int resultP = 0; resultP < compareLength - 1; resultP ++)
+            if (a [resultP] < b [resultP])
+                result [resultP] = newB [resultP];
+            else
+                result [resultP] = newA [resultP];
+        return result;
     }
 }
