@@ -98,4 +98,20 @@ public class FundamentalsThree
             }
         }
     }
+    
+    public static String[][] locate(String[][] arr)
+    {
+        int r = (int)(Math.random()*(10));
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; booblen; y++)
+            {
+                if(arr[x][y] == "#")
+                {
+                    arr[x][y] = String.format("%d",r);
+                }
+            } 
+        }
+        return arr;
+    }
 }
