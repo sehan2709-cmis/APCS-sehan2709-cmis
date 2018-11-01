@@ -98,20 +98,38 @@ public class FundamentalsThree
             }
         }
     }
-    
+
+    /*
     public static String[][] locate(String[][] arr)
     {
-        int r = (int)(Math.random()*(10));
-        for(int x = 0; x < arr.length; x++)
+    int r = (int)(Math.random()*(10));
+    for(int x = 0; x < arr.length; x++)
+    {
+    for(int y = 0; y < arr[1].length; y++)
+    {
+    if(arr[x][y] == "#")
+    {
+    arr[x][y] = String.format("%d",r);
+    }
+    } 
+    }
+    return arr;
+    }
+     */
+    // #7
+
+    public static int[][] replace(int[][] array, int threshold, int newValue)
+    {
+        for(int x = 0; x < array.length; x++)
         {
-            for(int y = 0; booblen; y++)
+            for(int y = 0; y < array[x].length; y++)
             {
-                if(arr[x][y] == "#")
+                if(array[x][y] > threshold)
                 {
-                    arr[x][y] = String.format("%d",r);
+                    array[x][y] = newValue;
                 }
-            } 
+            }
         }
-        return arr;
+        return array;
     }
 }

@@ -2,8 +2,9 @@
 comment0.target=FundamentalsThree
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment10.params=arr
-comment10.target=java.lang.String[][]\ locate(java.lang.String[][])
+comment10.params=array\ threshold\ newValue
+comment10.target=int[][]\ replace(int[][],\ int,\ int)
+comment10.text=\n\ \ \ \ public\ static\ String[][]\ locate(String[][]\ arr)\n\ \ \ \ {\n\ \ \ \ int\ r\ \=\ (int)(Math.random()*(10));\n\ \ \ \ for(int\ x\ \=\ 0;\ x\ <\ arr.length;\ x++)\n\ \ \ \ {\n\ \ \ \ for(int\ y\ \=\ 0;\ y\ <\ arr[1].length;\ y++)\n\ \ \ \ {\n\ \ \ \ if(arr[x][y]\ \=\=\ "\#")\n\ \ \ \ {\n\ \ \ \ arr[x][y]\ \=\ String.format("%d",r);\n\ \ \ \ }\n\ \ \ \ }\ \n\ \ \ \ }\n\ \ \ \ return\ arr;\n\ \ \ \ }\n
 comment2.params=intArray\ y\ x
 comment2.target=int\ returnValue(int[][],\ int,\ int)
 comment3.params=doubleArray\ y\ x
