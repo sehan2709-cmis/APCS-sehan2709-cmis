@@ -132,4 +132,72 @@ public class FundamentalsThree
         }
         return array;
     }
+
+    public static double[][] shift(double[][] arr, int row)
+    {
+        double[][] result = new double [arr.length][arr[0].length];
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; y < arr[x].length; y++)
+            {
+                if(x == row)
+                {
+                    double r = (double)(Math.random()*(10));
+                    result[x][y] = r;
+                }
+                else
+                {
+                    result[x][y] = arr[x][y];
+                }
+            }
+        }
+        return result;
+    }
+
+    public static double[][] tilt(double[][] arr)
+    {
+        double[][] result = new double [arr[0].length][arr.length];
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; y < arr[x].length; y++)
+            {
+                result[y][x] = arr[x][y];
+            }
+        }
+        return result;
+    }
+
+    public static int[][] greatestsum(int[][] arr, int h, int w)
+    {
+        int[][] result = new int [h][1];
+        for(int x = 0; x < h; x++)
+        {
+            int z = 0;
+            for(int y = 0; y < w; y++)
+            {
+                z += arr[x][y];
+            }
+            result[x][0] = z;
+        }
+        int max = 0;
+        for(int x = 0; x < h; x++)
+        {
+            if(result[x][0] >= result[max][0])
+            {
+                max = x;
+            }
+        }
+        int[][] output = new int [1][w];
+        for(int x = 0; x < w; x ++)
+        {
+            output[0][x] = arr[max][x];
+        }
+        return output;
+    }
+    
+    public static int[][] greatestsub(int[][] arr, int h, int w)
+    {
+        int[][] result = new int [arr.length/h][];
+        return result;
+    }
 }
