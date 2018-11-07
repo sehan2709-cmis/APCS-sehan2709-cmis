@@ -194,10 +194,32 @@ public class FundamentalsThree
         }
         return output;
     }
-    
+
     public static int[][] greatestsub(int[][] arr, int h, int w)
     {
-        int[][] result = new int [arr.length/h][];
+        int x = 0;
+        int y = 0;
+        for(int a = 0; a < arr.length; a++)
+        {
+            for(int b = 0; b < arr[a].length; b++)
+            {
+                if(w <= arr[a].length-b)
+                {
+                    y++;
+                }
+            }
+            if(h <= arr.length-a)
+            {
+                x++;
+            }
+        }
+        int[][] result = new int [x][y];
+        for(int a = 0; a < arr.length; a++)
+        {
+            for(int b = 0; b < arr[a].length; b++)
+            {
+            }
+        }
         return result;
     }
 }
