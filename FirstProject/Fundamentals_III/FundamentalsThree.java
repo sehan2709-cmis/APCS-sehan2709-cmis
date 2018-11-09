@@ -201,16 +201,16 @@ public class FundamentalsThree
         int y = 0;
         for(int a = 0; a < arr.length; a++)
         {
-            for(int b = 0; b < arr[a].length; b++)
-            {
-                if(w <= arr[a].length-b)
-                {
-                    y++;
-                }
-            }
-            if(h <= arr.length-a)
+            if(h+a <= arr.length)
             {
                 x++;
+            }
+        }
+        for(int a = 0; a < arr[0].length; a++)
+        {
+            if(w+a <= arr[0].length)
+            {
+                y++;
             }
         }
         int[][] result = new int [x][y];
@@ -218,6 +218,18 @@ public class FundamentalsThree
         {
             for(int b = 0; b < arr[a].length; b++)
             {
+                if(h+a <= arr.length-a && w+b <= arr[a].length-b)
+                {
+                    for(int c = 0; c < h; c++)
+                    {
+                        for(int d = 0; d < w; d++)
+                        {
+                            int g = c + a;
+                            int i = d + b;
+                            result[c][d] = arr[g][i];
+                        }
+                    }
+                }
             }
         }
         return result;
