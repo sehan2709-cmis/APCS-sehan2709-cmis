@@ -197,37 +197,50 @@ public class FundamentalsThree
 
     public static int[][] greatestsub(int[][] arr, int h, int w)
     {
-        int x = 0;
-        int y = 0;
-        for(int a = 0; a < arr.length; a++)
-        {
-            if(h+a <= arr.length)
-            {
-                x++;
-            }
-        }
-        for(int a = 0; a < arr[0].length; a++)
-        {
-            if(w+a <= arr[0].length)
-            {
-                y++;
-            }
-        }
-        int[][] result = new int [x][y];
+        int[][] result = new int [h][w];
+        int max = 0;
+        int trial = 0;
+        int j = 0;
+        int k = 0;
         for(int a = 0; a < arr.length; a++)
         {
             for(int b = 0; b < arr[a].length; b++)
             {
-                if(h+a <= arr.length-a && w+b <= arr[a].length-b)
+                if(a+h-1<arr.length && b+w-1<arr[a].length)
                 {
-                    for(int c = 0; c < h; c++)
+                    for(int c=0; c<h;c++)
                     {
-                        for(int d = 0; d < w; d++)
+                        for(int d=0; d<w; d++)
                         {
-                            int g = c + a;
-                            int i = d + b;
-                            result[c][d] = arr[g][i];
+                            max += result[c][d];
                         }
+                    }
+                    for(int e=0; e<h;e++)
+                    {
+                        for(int f=0;f<w;f++)
+                        {
+                            trial += arr[a+e][b+f];
+                        }
+                    }
+                    if(trial > max)
+                    {
+                        for(int g=0; g<h;g++)
+                        {
+                            for(int i=0; i<w;i++)
+                            {
+                                result[g][i] = arr[a+j][b+k];
+                                k++;
+                            }
+                            j++;
+                            k = 0;
+                        }
+                        j = 0;
+                        k = 0;
+                    }
+                    else
+                    {
+                        trial = 0;
+                        max = 0;
                     }
                 }
             }
