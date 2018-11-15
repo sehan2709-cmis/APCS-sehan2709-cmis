@@ -247,4 +247,60 @@ public class FundamentalsThree
         }
         return result;
     }
+
+    public static int[][] greatest_ring(int[][] arr)
+    {
+        int[][] result = new int [arr.length][arr[0].length];
+        int max = 0;
+        int trial = 0;
+        for(int x = 0; x < arr.length/2; x++)
+        {
+            for(int y = 0; y < arr.length; y++)
+            {
+                for(int z = 0; z <arr[y].length; z++)
+                {
+                    if(y==0+x||y==arr.length-x-1)
+                    {
+                        if(z==0+x||z==arr[0].length-x-1)
+                        {
+                            trial += arr[y][z];
+                        }
+                    }
+                    else
+                    {
+                        trial += 0;
+                    }
+                }
+            }
+            if(trial > max)
+            {
+                max = trial;
+                for(int c = 0; c < arr.length/2; c++)
+                {
+                    for(int a = 0; a < arr.length; a++)
+                    {
+                        for(int b = 0; b <arr[a].length; b++)
+                        {
+                            if(a==0+c||a==arr.length-c-1)
+                            {
+                                if(b==0+c||b==arr[0].length-c-1)
+                                {
+                                    result[a][b] = arr[a][b];
+                                }
+                            }
+                            else
+                            {
+                                result[a][b] = 0;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                trial = 0;
+            }
+        }
+        return result;
+    }
 }
