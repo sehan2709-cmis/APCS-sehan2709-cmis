@@ -259,11 +259,14 @@ public class FundamentalsThree
             {
                 for(int z = 0; z <arr[y].length; z++)
                 {
-                    if(y==0+x||y==arr.length-x-1)
+                    if((y == x || y == arr.length-x-1)||(z == x || z == arr.length-x-1))
                     {
-                        if(z==0+x||z==arr[0].length-x-1)
+                        if(!(y < x) && !(y > arr.length-x))
                         {
-                            trial += arr[y][z];
+                            if(!(z < x) && !(z > arr.length-x))
+                            {
+                                trial += arr[y][z];
+                            }
                         }
                     }
                     else
@@ -281,26 +284,29 @@ public class FundamentalsThree
                     {
                         for(int b = 0; b <arr[a].length; b++)
                         {
-                            if(a==0+c||a==arr.length-c-1)
+                            if((a == c || a == arr.length-c-1)||(b == c || b == arr.length-c-1))
                             {
-                                if(b==0+c||b==arr[0].length-c-1)
+                                if(!(y < x) && !(y > arr.length-x))
                                 {
-                                    result[a][b] = arr[a][b];
+                                    if(!(z < x) && !(z > arr.length-x))
+                                    {
+                                        result[a][b] = arr[a][b];
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                result[a][b] = 0;
+                                else
+                                {
+                                    result[a][b] = 0;
+                                }
                             }
                         }
                     }
+                    else
+                    {
+                        trial = 0;
+                    }
                 }
-            }
-            else
-            {
-                trial = 0;
+                return result;
             }
         }
-        return result;
     }
 }
