@@ -261,13 +261,21 @@ public class FundamentalsThree
                 {
                     if((y == x || y == arr.length-x-1)||(z == x || z == arr.length-x-1))
                     {
-                        if(!(y < x) && !(y > arr.length-x))
+                        if(!((y < x)||(y > arr.length-x-1)))
                         {
-                            if(!(z < x) && !(z > arr.length-x))
+                            if(!((z < x)||(z > arr.length-x-1)))
                             {
                                 trial += arr[y][z];
                             }
+                            else
+                            {
+                                trial += 0;
+                            }
                         }
+                        else
+                            {
+                                trial += 0;
+                            }
                     }
                     else
                     {
@@ -286,27 +294,35 @@ public class FundamentalsThree
                         {
                             if((a == c || a == arr.length-c-1)||(b == c || b == arr.length-c-1))
                             {
-                                if(!(y < x) && !(y > arr.length-x))
+                                if(!((a < c)||(a > arr.length-c-1)))
                                 {
-                                    if(!(z < x) && !(z > arr.length-x))
+                                    if(!((b < c)||(b > arr.length-c-1)))
                                     {
                                         result[a][b] = arr[a][b];
                                     }
+                                    else
+                                {
+                                    result[a][b] = 0;
+                                }
                                 }
                                 else
                                 {
                                     result[a][b] = 0;
                                 }
                             }
+                            else
+                            {
+                                result[a][b] = 0;
+                            }
                         }
                     }
-                    else
-                    {
-                        trial = 0;
-                    }
                 }
-                return result;
+            }
+            else
+            {
+                trial = 0;
             }
         }
+        return result;
     }
 }
