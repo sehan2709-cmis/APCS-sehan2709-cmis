@@ -273,9 +273,9 @@ public class FundamentalsThree
                             }
                         }
                         else
-                            {
-                                trial += 0;
-                            }
+                        {
+                            trial += 0;
+                        }
                     }
                     else
                     {
@@ -301,9 +301,9 @@ public class FundamentalsThree
                                         result[a][b] = arr[a][b];
                                     }
                                     else
-                                {
-                                    result[a][b] = 0;
-                                }
+                                    {
+                                        result[a][b] = 0;
+                                    }
                                 }
                                 else
                                 {
@@ -321,6 +321,43 @@ public class FundamentalsThree
             else
             {
                 trial = 0;
+            }
+        }
+        return result;
+    }
+
+    public static double[][] randoms_seat(double[][] arr)
+    {
+        double[][] result = new double [arr.length][arr[0].length];
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; y < arr[x].length; y++)
+            {
+                while(result[x][y] != 0)
+                {
+                    int r = (int)(Math.random()*(arr.length));
+                    int ra = (int)(Math.random()*(arr[x].length));
+                    if(!((r==x)&&(ra==y)))
+                    {
+                        for(int a = 0; a < arr.length; a++)
+                        {
+                            for(int b = 0; b < arr[a].length; b++)
+                            {
+                                if(arr[r][ra] != result[a][b])
+                                {
+                                    r = (int)(Math.random()*(arr.length));
+                                    ra = (int)(Math.random()*(arr[x].length));
+                                }
+                            }
+                        }
+                        result[x][y] = arr[r][ra];
+                    }
+                    else
+                    {
+                        r = (int)(Math.random()*(arr.length));
+                        ra = (int)(Math.random()*(arr[x].length));
+                    }
+                }
             }
         }
         return result;
