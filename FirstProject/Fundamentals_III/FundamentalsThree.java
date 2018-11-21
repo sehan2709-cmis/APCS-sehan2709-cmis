@@ -286,24 +286,17 @@ public class FundamentalsThree
             if(trial > max)
             {
                 max = trial;
-                for(int c = 0; c < arr.length/2; c++)
+                for(int a = 0; a < arr.length; a++)
                 {
-                    for(int a = 0; a < arr.length; a++)
+                    for(int b = 0; b <arr[a].length; b++)
                     {
-                        for(int b = 0; b <arr[a].length; b++)
+                        if((a == x || a == arr.length-x-1)||(b == x || b == arr.length-x-1))
                         {
-                            if((a == c || a == arr.length-c-1)||(b == c || b == arr.length-c-1))
+                            if(!((a < x)||(a > arr.length-x-1)))
                             {
-                                if(!((a < c)||(a > arr.length-c-1)))
+                                if(!((b < x)||(b > arr.length-x-1)))
                                 {
-                                    if(!((b < c)||(b > arr.length-c-1)))
-                                    {
-                                        result[a][b] = arr[a][b];
-                                    }
-                                    else
-                                    {
-                                        result[a][b] = 0;
-                                    }
+                                    result[a][b] = arr[a][b];
                                 }
                                 else
                                 {
@@ -314,6 +307,10 @@ public class FundamentalsThree
                             {
                                 result[a][b] = 0;
                             }
+                        }
+                        else
+                        {
+                            result[a][b] = 0;
                         }
                     }
                 }
@@ -333,24 +330,15 @@ public class FundamentalsThree
         {
             for(int y = 0; y < arr[x].length; y++)
             {
-                while(result[x][y] != 0)
+                boolean z = false;
+                while (z == false)
                 {
                     int r = (int)(Math.random()*(arr.length));
                     int ra = (int)(Math.random()*(arr[x].length));
-                    if(!((r==x)&&(ra==y)))
+                    if(result[r][ra] == 0 && (arr[x][y] != arr[r][ra]))
                     {
-                        for(int a = 0; a < arr.length; a++)
-                        {
-                            for(int b = 0; b < arr[a].length; b++)
-                            {
-                                if(arr[r][ra] != result[a][b])
-                                {
-                                    r = (int)(Math.random()*(arr.length));
-                                    ra = (int)(Math.random()*(arr[x].length));
-                                }
-                            }
-                        }
-                        result[x][y] = arr[r][ra];
+                        result[r][ra] = arr[x][y];
+                        z = true;
                     }
                     else
                     {
