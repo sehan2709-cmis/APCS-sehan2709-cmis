@@ -323,6 +323,22 @@ public class FundamentalsThree
         return result;
     }
 
+    public static int[][] greatestt_ring(int[][] arr)
+    {
+        int[][] result = new int [arr.length][arr[0].length];
+        for(int q=0; q<arr.length/2; q++)
+        {
+            for(int x=0; x<arr.length; x++)
+            {
+                for(int y =0; y<arr[x].length; y++)
+                {
+                    if( 
+                }
+            }
+        }
+        return result;
+    }
+
     public static double[][] randoms_seat(double[][] arr)
     {
         double[][] result = new double [arr.length][arr[0].length];
