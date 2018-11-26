@@ -99,24 +99,41 @@ public class FundamentalsThree
         }
     }
 
-    /*
     public static String[][] locate(String[][] arr)
     {
-    int r = (int)(Math.random()*(10));
-    for(int x = 0; x < arr.length; x++)
-    {
-    for(int y = 0; y < arr[1].length; y++)
-    {
-    if(arr[x][y] == "#")
-    {
-    arr[x][y] = String.format("%d",r);
+        int r = (int)(Math.random()*(9));
+        String[][] result = new String [arr.length][arr[0].length];
+        int find = 0;
+        int gitit = 0;
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; y < arr[1].length; y++)
+            {
+                if(arr[x][y] == "#")
+                {
+                    find++;
+                }
+            } 
+        }
+        int ran = (int)(Math.random()*(find));
+        for(int x = 0; x < arr.length; x++)
+        {
+            for(int y = 0; y < arr[1].length; y++)
+            {
+                if(gitit == find)
+                {
+                    result[x][y] = ("" + ran);
+                    gitit++;
+                }
+                else
+                {
+                    result[x][y] = arr[x][y];
+                    gitit++;
+                }
+            }
+        }
+        return result;
     }
-    } 
-    }
-    return arr;
-    }
-     */
-    // #7
 
     public static int[][] replace(int[][] array, int threshold, int newValue)
     {
@@ -323,18 +340,50 @@ public class FundamentalsThree
         return result;
     }
 
-    public static int[][] greatestt_ring(int[][] arr)
+    public static int[][] ggrreeaatteesstt_rriinngg(int[][] arr)
     {
         int[][] result = new int [arr.length][arr[0].length];
-        for(int q=0; q<arr.length/2; q++)
+        int trial = 0;
+        int max = 0;
+        for(int what = 0; what < arr.length/2; what++)
         {
-            for(int x=0; x<arr.length; x++)
+            for(int x = 0; x <arr.length; x++)
             {
-                for(int y =0; y<arr[x].length; y++)
+                for(int y = 0; y < arr[x].length; y++)
                 {
-                    if( 
+                    if(x == what || y == what)
+                    {
+                        trial += arr[x][y];
+                    }
+                    else if(x == arr.length-what-1 || y == arr[x].length-what-1)
+                    {
+                        trial += arr[x][y];
+                    }
                 }
             }
+            if(trial > max)
+            {
+                max = trial;
+                for(int x = 0; x <arr.length; x++)
+                {
+                    for(int y = 0; y < arr[x].length; y++)
+                    {
+                        if(x == what || y == what)
+                        {
+                            result[x][y] = arr[x][y];
+                        }
+                        else if(x == arr.length-what-1 || y == arr[x].length-1-what)
+                        {
+                            result[x][y] = arr[x][y];
+                        }
+                        else
+                        {
+                            result[x][y] = 0;
+                        }
+                    }
+                }
+            }
+            trial = 0;
         }
         return result;
     }
