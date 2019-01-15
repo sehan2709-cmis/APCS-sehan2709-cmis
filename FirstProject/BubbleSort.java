@@ -9,23 +9,6 @@ public class BubbleSort
     }
 
     public static int[] sort(int[] array){
-        boolean x = true;
-        int yeah = 0;
-        while( x = true)
-        {
-            x = false;
-            for(int y = 0; y < array.length-1; y++)
-            {
-                if(array[y] > array[y+1])
-                {
-                    
-                }
-            }
-        }
-        return array;
-    }
-    
-    public static int[] sortt(int[] array){
         int turn = 0;
         for(int x =0; x < array.length; x++)
         {
