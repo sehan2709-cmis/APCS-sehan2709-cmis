@@ -1,3 +1,5 @@
+package Sort;
+
 public class BubbleSort
 {
     public static void main(String[] args){
@@ -5,7 +7,6 @@ public class BubbleSort
         print(array);
         sort(array);
         print(array);
-        sortt(array);
     }
 
     public static int[] sort(int[] array){
