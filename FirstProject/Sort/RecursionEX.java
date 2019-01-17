@@ -15,24 +15,32 @@ public class RecursionEX
         {
             return a;
         }
-        else if ( b == 0 || a == 0)
-        {
-            return 0;
-        }
-        else if ( b == 1)
-        {
-            return a;
-        }
         else if (a == 1)
         {
             return b;
         }
+        else if ( b == 0 || a == 0)
+        {
+            return 0;
+        }
+        else if (a < 0 && b > 0 )
+        {
+            return (b + multiply((a -1), b));
+        }
+        else if (a > 0 && b < 0 )
+        {
+            return (a + multiply(a, (b-1)));
+        }
+        else if (a >  0 && b > 0)
+        {
+            return (a + multiply(a, (b-1)));
+        }
         else
         {
-            return a + multiply( a , b - 1);
+            return (-a + multiply( a , b + 1));
         }
     }
-    
+
     public static int division(int a, int b)
     {
         if(b == 1)
@@ -48,7 +56,7 @@ public class RecursionEX
             return 1 + division( a - b , b);
         }
     }
-    
+
     public static int square(int a, int b)
     {
         if(b == 0)
