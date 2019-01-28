@@ -10,3 +10,19 @@ VERSION or DATE:
 HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
+
+       oa ob oc od
+       oa xb oc od
+       oa xb xc od
+       oa xb xc xd
+       oa xb oc xd 
+       oa ob xc xd
+       oa ob xc od
+       oa ob oc xd
+       xa ob oc od
+       xa ob xc od
+       xa ob xc xd
+       xa ob oc xd
+       xa xb oc od
+       xa xb oc xd
+       xa xb xc od
