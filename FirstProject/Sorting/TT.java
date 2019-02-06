@@ -1,4 +1,4 @@
-public class TTTTTTTTTTT
+public class TT
 {
     public static void main(String[] args){
         ArrayType at = ArrayType.RANDOM; //SORTED, RANDOM, or REVERSED
