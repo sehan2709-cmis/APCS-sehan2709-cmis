@@ -17,6 +17,12 @@ public class Thing
     {
         this();
         this.x1 = xx;
+        this.x2 = 62.3;
+    }
+    
+    public Thing(String xy)
+    {
+        
     }
     
     public void setx1(int a)
