@@ -24,6 +24,6 @@ public class Students
     
     public String identity()
     {
-        return String.format("  For the sex: (false = male), (true = female)\n  The Student names is %d %d. His/Her grade is %d. His/Her sex is %d", first_name, last_name, grade, sex);
+        return String.format("  For the sex: (false = male), (true = female)\n  The Student names is %s %s. His/Her grade is %d. His/Her sex is %b\n", first_name, last_name, grade, sex);
     }
 }
