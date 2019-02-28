@@ -1,3 +1,5 @@
+package Sorting;
+
 public class MergeSort
 {
     public static int steps = 0;

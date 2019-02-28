@@ -1,3 +1,5 @@
+package Sorting;
+
 public class Average
 {
     public static void main(String[] args){

@@ -1,3 +1,5 @@
+package Sorting;
+
 public class Linear_Serch
 {
     public static int linear(int[] array, int c){

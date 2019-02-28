@@ -1,3 +1,5 @@
+package Sorting;
+
 
 /**
  * Enumeration class ArrayType - write a description of the enum class here

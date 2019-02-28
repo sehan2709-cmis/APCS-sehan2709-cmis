@@ -1,3 +1,5 @@
+package Sorting;
+
 public class SelectionSort
 {
     public static int steps = 0;

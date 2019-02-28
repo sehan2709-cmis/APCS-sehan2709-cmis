@@ -1,3 +1,5 @@
+package Sorting;
+
 public class Util
 {
     public static int[] getArray(int w, ArrayType arrayType){
