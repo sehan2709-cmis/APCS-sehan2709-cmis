@@ -20,7 +20,7 @@ public class DVD
         int users = Integer.parseInt(JOptionPane.showInputDialog("Type your Seconds: "));
         Clock time2 = new Clock(userh, userm, users);
         System.out.println(time2.timeis());
-        
+
         Scanner input = new Scanner(System.in);
         System.out.print("Type your Hour: ");
         int userhh = input.nextInt();
@@ -31,7 +31,7 @@ public class DVD
         Clock time3 = new Clock(userhh, usermm, userss);
         System.out.println(time3.timeis());
     }
-    
+
     public static void Name(String[] args)
     {
         Students student1 = new Students();
@@ -43,7 +43,7 @@ public class DVD
         Students nainai = new Students();
         System.out.println(nainai.identity());
     }
-    
+
     public static void OSTT(String[] args)
     {
         OST waw = new OST();
@@ -53,8 +53,20 @@ public class DVD
         OST halk = new OST();
         System.out.println(halk.play());
     }
-    
-    public static void Play(String [] args)
+
+    public static void Cardshow(String [] args)
     {
+        Card[] Deck = new Card[52];
+        int place = 0;
+        for(int x = 0; x < 4; x++)
+        {
+            for(int y = 0; y < 13; y++)
+            {
+                Card ang = new Card(x, y);
+                deck[place] = place;
+                place++;
+            }
+        }
     }
 }
+
