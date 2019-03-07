@@ -22,8 +22,23 @@ public class Casino
         {
             hand.addCard(Deck[(int)(Math.random()*52)]);
         }
+        /*
         System.out.println(hand);
         
+        */
+        Hand hand2 = new Hand();
+        while( hand2.getValue() < 21)
+        {
+            hand2.addCard(Deck[(int)(Math.random()*52)]);
+            
+            System.out.println(hand2);
+            System.out.println(hand2.getValue());
+        }
+        
+        
+        /*
+        System.out.println(hand.getValue());
+        */
     }
 }
 

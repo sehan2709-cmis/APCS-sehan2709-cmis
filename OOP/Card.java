@@ -15,6 +15,11 @@ public class Card
         this.rank = rank;
     }
     
+    public int getRank()
+    {
+        return rank;
+    }
+    
     public String toString(){
         String[] suits = {"H","D","S","C"};
         String[] ranks = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
