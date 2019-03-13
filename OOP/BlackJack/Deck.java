@@ -1,3 +1,5 @@
+package BlackJack;
+
 import java.util.*;
 
 public class Deck
@@ -34,5 +36,22 @@ public class Deck
 
     public void shuffle()
     {
+        int time_shuf = (int)(Math.random() * 100);
+        for(int shufing = 0; shufing < time_shuf ; shufing++)
+        {
+            int pick_card = (int)(Math.random() * cards.size());
+            cards.add(cards.get(pick_card));
+            cards.remove(pick_card);
+        }
+    }
+
+    public String toString()
+    {
+        String out = "";
+        for(Card card : cards)
+        {
+            out += card.toString() + " ";
+        }
+        return out;
     }
 }
