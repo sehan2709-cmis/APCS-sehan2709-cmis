@@ -1,12 +1,13 @@
 package BlackJack;
 
-public class Card
+public class Card   
 {
     private int suit; 
     private int rank; 
     private boolean faceUp;
 
-    public Card(){
+    public Card()
+    {
         suit = (int)(Math.random() * 4);
         rank = (int)(Math.random() * 13);
     }

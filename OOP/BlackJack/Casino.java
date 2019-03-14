@@ -13,7 +13,7 @@ public class Casino
         
         ArrayList<Hand> hold = new ArrayList<Hand>();
         
-        int amount_players = ((int)(Math.random() * 6))+1;
+        int amount_players = ((int)(Math.random() * 3))+4;
         for(int player = 0; player < amount_players; player++)
         {
             Hand place = new Hand();
@@ -23,6 +23,10 @@ public class Casino
             }
             hold.add(place);
         }
+        
+        
+        Card c = new Card();
+        System.out.println(c.getRank());
     }
 }
 
