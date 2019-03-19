@@ -25,6 +25,11 @@ public class Owner
         this.player_n = player_n;
     }
     
+    public Owner(String Name)
+    {
+        this.Name = Name;
+    }
+    
     public String getName()
     {
         return Name;
