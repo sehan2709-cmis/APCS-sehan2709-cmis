@@ -1,4 +1,3 @@
-package BlackJack;
 
 import javax.swing.JOptionPane;
 import java.util.Scanner;
@@ -9,16 +8,15 @@ public class Casino
     public static void main(String [] args)
     {
         Game game = new Game();
+        String[] names = new String[]{"Youngil","Sehan","Daniel","Enoch","Sam"};
         
         int amount_players = ((int)(Math.random() * 5))+1;
         for(int adding = 0; adding < amount_players; adding++)
         {
-            game.addPlayer("Player %d", adding);
+            game.addPlayer(names[adding]);
         }
         
         ArrayList<Hand> hold = new ArrayList<Hand>();
-
-        int amount_players = ((int)(Math.random() * 3))+4;
         for(int player = 0; player < amount_players; player++)
         {
             Hand place = new Hand();
@@ -28,7 +26,6 @@ public class Casino
             }
             hold.add(place);
         }
-        
         
         Hand dealer_hand = hold.get(0);
         int dealer_value = hold.get(0).getValue();
@@ -44,4 +41,3 @@ public class Casino
         }
     }
 }
-

@@ -1,5 +1,3 @@
-package BlackJack;
-
 public class Owner
 {
     private String Name; 

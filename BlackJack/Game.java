@@ -1,4 +1,4 @@
-package BlackJack;
+
 import java.util.*;
 
 public class Game
@@ -25,10 +25,10 @@ public class Game
         deck.shuffle();
         for(int drawing = 0; drawing < players.size(); drawing++)
         {
-            Hand place = new Hand();
             for(int holding = 0; holding < 2; holding++)
             {
-                place.addCard(deck.draw());
+                players tern = players.get(drawing);
+                tern.addCard(deck.draw());
             }
             Owner owner = players.get(drawing);
             place.setHand(place);
