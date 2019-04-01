@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Asian
+comment1.params=
+comment1.target=Asian()
+comment2.params=
+comment2.target=java.lang.String\ getSkin()
+comment3.params=skin
+comment3.target=void\ setSkin(java.lang.String)
+comment4.params=
+comment4.target=double\ gethight()
+comment5.params=hight
+comment5.target=void\ setHight(double)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

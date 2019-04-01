@@ -1,4 +1,4 @@
-public class Entity
+ public class Entity
 {
     private String name;
     private int age;
@@ -7,6 +7,7 @@ public class Entity
     public Entity(String name)
     {
         this.name = name;
+        this.age = 0;
     }
     
     public Entity(String name, int age)
@@ -14,34 +15,25 @@ public class Entity
         this.name = name;
         this.age = age;
     }
+    
+    public void changeName(String newName)
+    {
+        this.name = newName;
+    }
 
-    public Entity(int value, int age)
+    public String getName()
     {
-        this.value = value;
-        this.age = age;
+        return name;
     }
-    
-    public String toString()
-    {
-        String out = "";
-        out += super.toString() + "\n";
-        out += "name: " + name + "\n";
-        return out;
-    }
-    
+          
     public int getAge()
     {
         return age;
     }
     
-    public String getName()
+    public void setAge(int newAge)
     {
-        return name;
-    }
-    
-    public void setAge(int ag)
-    {
-        this.age = ag;
+        age = newAge;
     }
     
     public int getValue()
@@ -49,8 +41,13 @@ public class Entity
         return value;
     }
     
-    public void setValue(int cost)
+    public void setValue(int newValue)
     {
-        this.value = cost;
+        value = newValue;
+    }
+    
+    public String toString()
+    {
+        return String.format("%s:%s:%s",super.toString(), name ,"Entity");
     }
 }

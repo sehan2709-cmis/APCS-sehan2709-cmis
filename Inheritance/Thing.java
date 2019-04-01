@@ -1,24 +1,17 @@
 public class Thing extends Entity
 {
-    private int volume;
-    
-    Thing()
-    {
-        super("Default Thing");
-    }
 
-    Thing(String name)
-    {
-        super(name);
+    public Thing(){
+        super("default");
     }
     
-    public int getVol()
-    {
-        return volume;
+    public Thing(String name, int age){
+        super(name, age);
     }
     
-    public void setVol(int vol)
-    {
-        this.volume = vol;
+    public String toString(){
+        String out = super.toString();
+        out += "->Thing";
+        return out;
     }
 }

@@ -2,10 +2,8 @@
 comment0.target=Thing
 comment1.params=
 comment1.target=Thing()
-comment2.params=name
-comment2.target=Thing(java.lang.String)
+comment2.params=name\ age
+comment2.target=Thing(java.lang.String,\ int)
 comment3.params=
-comment3.target=int\ getVol()
-comment4.params=vol
-comment4.target=void\ setVol(int)
-numComments=5
+comment3.target=java.lang.String\ toString()
+numComments=4

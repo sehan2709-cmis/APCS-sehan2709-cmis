@@ -1,35 +1,24 @@
 public class Place extends Entity
 {
     private int population;
-    private String name;
-
-    Place()
-    {
-        super("Default Place");
-    }
-
-    Place(String name)
-    {
-        super(name);
+    public Place(){
+        super("default");
     }
     
-    public int getPopul()
-    {
+    public Place(String name, int age){
+        super(name, age);
+    }
+        
+    public int getPopulation(){
         return population;
     }
     
-    public void setPopul(int Popul)
-    {
-        this.population = Popul;
+    public void setPopulation(int newPopulation){
+        population = newPopulation;
     }
-    
-    public String getName()
-    {
-        return name;
-    }
-    
-    public void setName(String nae)
-    {
-        this.name = nae;
+    public String toString(){
+        String out = super.toString();
+        out += "->Place";
+        return out;
     }
 }
