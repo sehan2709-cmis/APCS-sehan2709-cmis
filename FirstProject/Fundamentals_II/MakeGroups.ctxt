@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=MakeGroups
-comment1.params=names
-comment1.target=java.lang.String[]\ shuffle(java.lang.String[])
-comment2.params=names\ groupSize
-comment2.target=java.lang.String[]\ makeGroup(java.lang.String[],\ int)
-numComments=3
