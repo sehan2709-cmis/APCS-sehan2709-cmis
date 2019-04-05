@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=FriedEggMan
+comment1.params=
+comment1.target=FriedEggMan()
+comment2.params=suitColor\ hasCape
+comment2.target=FriedEggMan(java.lang.String,\ boolean)
+comment3.params=
+comment3.target=java.lang.String\ motto()
+numComments=4

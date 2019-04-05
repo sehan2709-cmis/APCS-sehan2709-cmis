@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Loops
+comment1.params=
+comment1.target=void\ suqareTible()
+comment2.params=num
+comment2.target=void\ triangle(int)
+comment3.params=num
+comment3.target=void\ pyramid(int)
+numComments=4

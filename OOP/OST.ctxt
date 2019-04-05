@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=OST
+comment1.params=
+comment1.target=OST()
+comment2.params=instru\ instr\ amount
+comment2.target=OST(java.lang.String,\ java.lang.String,\ int)
+comment3.params=
+comment3.target=java.lang.String\ play()
+numComments=4

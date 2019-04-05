@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=HD
+comment1.params=
+comment1.target=HD()
+comment2.params=model\ price
+comment2.target=HD(java.lang.String,\ double)
+numComments=3

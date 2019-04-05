@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=SuperHero
+comment1.params=
+comment1.target=SuperHero()
+comment10.params=
+comment10.target=java.lang.String\ toString()
+comment2.params=suitColor\ hasCape
+comment2.target=SuperHero(java.lang.String,\ boolean)
+comment3.params=suitColor
+comment3.target=void\ setSuitColor(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getSuitColor()
+comment5.params=cape
+comment5.target=void\ setCape(boolean)
+comment6.params=
+comment6.target=boolean\ isCaped()
+comment7.params=name
+comment7.target=void\ setName(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ getName()
+comment9.params=
+comment9.target=java.lang.String\ motto()
+numComments=11
