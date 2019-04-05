@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Place
+comment1.params=
+comment1.target=Place()
+comment2.params=name\ age
+comment2.target=Place(java.lang.String,\ int)
+comment3.params=
+comment3.target=int\ getPopulation()
+comment4.params=newPopulation
+comment4.target=void\ setPopulation(int)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
