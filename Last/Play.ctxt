@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Play
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=
+comment2.target=int\ getAge()
+comment3.params=year
+comment3.target=void\ after(int)
+numComments=4
