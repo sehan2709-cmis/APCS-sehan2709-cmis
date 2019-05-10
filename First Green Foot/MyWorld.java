@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public MyWorld()
     {    
-        super(800, 600, 1); 
+        super(600, 400, 1); 
         prepare();
     }
 
@@ -22,5 +22,7 @@ public class MyWorld extends World
     {
         Character character = new Character();
         addObject(character,107,306);
+        Jumper jumper = new Jumper();
+        addObject(jumper,230,372);
     }
 }

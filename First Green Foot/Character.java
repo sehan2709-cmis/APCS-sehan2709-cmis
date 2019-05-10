@@ -1,8 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * Write a description of class Character here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Character extends Actor
 {
-    public void ack()
+    public void act()
     {
         move();
     }
@@ -10,22 +16,23 @@ public class Character extends Actor
     public void move() {
         int y = getY();
         int x = getX();
-        if(Greenfoot.isKeyDown("S"))
+        if(Greenfoot.isKeyDown("w"))
         {
-            y--;
+            y-= 4;
         }
-        if(Greenfoot.isKeyDown("A"))
+        if(Greenfoot.isKeyDown("a"))
         {
-            x--;
+            x-= 4;
         }
-        if(Greenfoot.isKeyDown("W"))
+        if(Greenfoot.isKeyDown("s"))
         {
-            y++;
+            y+=4 ;
         }
-        if(Greenfoot.isKeyDown("D"))
+        if(Greenfoot.isKeyDown("d"))
         {
-            x++;
+            x+=4 ;
         }
         setLocation(x,y);
-    }
+    }  
 }
+
