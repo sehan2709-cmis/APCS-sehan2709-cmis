@@ -40,11 +40,11 @@ public class Jumper extends Actor
     public void move() {
         int y = getY();
         int x = getX();
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("i"))
         {
             x -= 6;
         }
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("p"))
         {
             x += 6;
         }

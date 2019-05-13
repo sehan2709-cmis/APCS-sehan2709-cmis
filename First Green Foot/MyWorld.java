@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public MyWorld()
     {    
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
         prepare();
     }
 
@@ -24,5 +24,34 @@ public class MyWorld extends World
         addObject(character,107,306);
         Jumper jumper = new Jumper();
         addObject(jumper,230,372);
+        character.setLocation(94,366);
+        Ang ang = new Ang();
+        addObject(ang, 0, 0);
+        removeObject(character);
+        removeObject(ang);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(230,372);
+        jumper.setLocation(11,549);
     }
 }
