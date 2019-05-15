@@ -20,38 +20,23 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Character character = new Character();
-        addObject(character,107,306);
-        Jumper jumper = new Jumper();
+        Egg egg = new Egg();
+        addObject(egg,107,306);
+        WBCell jumper = new WBCell();
         addObject(jumper,230,372);
-        character.setLocation(94,366);
-        Ang ang = new Ang();
+        egg.setLocation(94,366);
+        sperm ang = new sperm();
         addObject(ang, 0, 0);
-        removeObject(character);
+        removeObject(egg);
         removeObject(ang);
         jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
-        jumper.setLocation(230,372);
         jumper.setLocation(11,549);
+        sperm ang2 = new sperm();
+        addObject(ang2,322,388);
+        removeObject(jumper);
+        WBCell wbcell2 = new WBCell();
+        addObject(wbcell2,48,325);
+        Egg egg2 = new Egg();
+        addObject(egg2,643,214);
     }
 }

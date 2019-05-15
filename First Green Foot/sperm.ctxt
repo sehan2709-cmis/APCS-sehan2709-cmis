@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=Ang
+comment0.target=sperm
 comment1.params=
-comment1.target=Ang()
+comment1.target=sperm()
 comment2.params=width\ height
-comment2.target=Ang(int,\ int)
+comment2.target=sperm(int,\ int)
 comment3.params=
 comment3.target=void\ act()
 numComments=4
