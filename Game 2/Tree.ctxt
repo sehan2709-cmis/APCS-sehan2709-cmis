@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Tree
+comment0.text=\n\ Write\ a\ description\ of\ class\ Tree\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Tree()
+comment2.params=w\ h
+comment2.target=Tree(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

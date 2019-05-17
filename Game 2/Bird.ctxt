@@ -2,6 +2,9 @@
 comment0.target=Bird
 comment0.text=\n\ Write\ a\ description\ of\ class\ Brid\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Brid\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment1.target=Bird()
+comment2.params=w\ h
+comment2.target=Bird(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

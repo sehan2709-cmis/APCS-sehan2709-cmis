@@ -12,14 +12,29 @@ public class Bird extends Actor
     double g = 0.9;
     double speed = -9;
 
-    /**
-     * Act - do whatever the Brid wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Bird()
+    {
+        this(75,55);
+    }
+    
+    public Bird(int w, int h)
+    {
+        GreenfootImage image = getImage();
+        image.scale(w,h);
+        setImage(image);
+    }
+
     public void act() 
     {
         setLocation( (int)(getX()), (int)(getY() + dy));
 
+        if(getOneIntersectingObject (Tree.class) != null)
+        {
+            GameOver end = new GameOver();
+            getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
+            Greenfoot.stop();
+        }
+        
         if(Greenfoot.isKeyDown("space"))
         {
             dy = speed;
@@ -33,7 +48,7 @@ public class Bird extends Actor
         {
             setRotation((int)(dy * 2.9));
         }
-        if (getY() > getWorld().getHeight())
+        if (getY() > getWorld().getHeight()-120)
         {
             GameOver end = new GameOver();
             getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
