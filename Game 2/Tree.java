@@ -11,7 +11,7 @@ public class Tree extends Actor
     int speed = 4;
     public Tree()
     {
-        this(80,500);
+        this(80,100);
     }
     
     public Tree(int w, int h)

@@ -54,6 +54,12 @@ public class Bird extends Actor
             getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
             Greenfoot.stop();
         }
+        else if(getY() < -30)
+        {
+            GameOver end = new GameOver();
+            getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
+            Greenfoot.stop();
+        }
 
         dy = dy+ g;
     }    

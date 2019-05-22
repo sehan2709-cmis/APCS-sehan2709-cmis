@@ -25,14 +25,18 @@ public class MyWorld extends World
         counter++;
         if(counter == 100)
         {
-            Tree tree = new Tree();
-            
-            GreenfootImage image = tree.getImage();
-            double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-            addObject(tree, getWidth(), (int)(tall));
+            double out = (Math.random()*((2)+1))+1;
+            for(int cal = 0; cal < out; cal++)
+            {
+                Tree tree = new Tree();
 
-            System.out.println(counter);
-            counter = 0;
+                GreenfootImage image = tree.getImage();
+                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+                addObject(tree, getWidth(), (int)(tall));
+
+                System.out.println(counter);
+                counter = 0;
+            }
         }
     }
 
