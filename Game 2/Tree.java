@@ -26,6 +26,5 @@ public class Tree extends Actor
     {
         GreenfootImage image = getImage();
         setLocation( getX() - speed, getY());
-        
     }    
 }

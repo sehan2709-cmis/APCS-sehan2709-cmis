@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed May 22 09:20:37 ICT 2019
+#Thu May 23 11:22:19 ICT 2019
 target4.type=ClassTarget
 dependency3.from=MyWorld
 target3.height=50
@@ -11,7 +11,7 @@ class.Tree.superclass=greenfoot.Actor
 target4.name=MyWorld
 target4.typeParameters=
 readme.width=47
-editor.fx.0.width=800
+editor.fx.0.width=0
 target1.height=50
 class.Bird.image=cat.png
 target3.typeParameters=
@@ -24,7 +24,7 @@ dependency1.to=GameOver
 dependency2.to=Tree
 target1.width=90
 editor.fx.0.y=0
-editor.fx.0.x=800
+editor.fx.0.x=0
 target2.typeParameters=
 dependency3.to=Bird
 target3.showInterface=false
@@ -52,7 +52,7 @@ mainWindow.x=329
 dependency1.from=Bird
 class.Tree.image=anchor.png
 target1.y=0
-editor.fx.0.height=873
+editor.fx.0.height=0
 target1.x=0
 dependency1.type=UsesDependency
 readme.height=58

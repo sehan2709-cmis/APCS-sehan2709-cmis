@@ -2,6 +2,9 @@
 comment0.target=Rearea
 comment0.text=\n\ Write\ a\ description\ of\ class\ Rearea\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Rearea\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment1.target=Rearea()
+comment2.params=w\ h
+comment2.target=Rearea(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Animal
-comment0.text=\n\ Write\ a\ description\ of\ class\ Animal\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Animal\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-numComments=2
+comment0.text=\n\ Write\ a\ description\ of\ class\ AnimalIII\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=target
+comment1.target=Animal(greenfoot.Actor)
+comment2.params=w\ h
+comment2.target=Animal(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

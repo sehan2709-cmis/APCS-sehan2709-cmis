@@ -8,10 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rearea extends Actor
 {
-    /**
-     * Act - do whatever the Rearea wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Rearea()
+    {
+        this(100,100);
+    }
+    
+    public Rearea(int w, int h)
+    {
+        GreenfootImage image = getImage();
+        image.scale(w,h);
+        setImage(image);
+    }
+    
     public void act() 
     {
         // Add your action code here.

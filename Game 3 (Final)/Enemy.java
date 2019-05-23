@@ -16,6 +16,21 @@ public class Enemy extends Actor
 
     public void act() 
     {
+        Animal animal = (Animal) getOneIntersectingObject(Animal.class);
+        if((getOneIntersectingObject (Wall.class) != null) || (getOneIntersectingObject (Main.class) != null) || (getOneIntersectingObject (Team.class) != null))
+        {
+            setLocation(950, 300);
+        }
+        else if((getOneIntersectingObject (Main.class) != null) || (getOneIntersectingObject (Team.class) != null))
+        {
+            setLocation(950, 300);
+        }
+        else if(getOneIntersectingObject (Animal.class) != null)
+        {
+            setLocation(50, 300);
+            animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+        }
+        
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
             if(Math.random() > 0.4){
@@ -32,20 +47,10 @@ public class Enemy extends Actor
             }
         } else if (Math.random() > 0.5) {
             turnTowards(target.getX(), target.getY());
-            if(!intersects(target)){
+            if(!intersects(target) && ((getX() > 50 && getX() < 950) && ( getY() > 50 && getY() < 550 )))
+            {
                 move((int)(Math.random() * 5));
             }
         }
-        //else{
-        //    TeamArea teamarea = ((MyWorld)getWorld()).getTeamArea();
-          //  turnTowards(teamarea.getX(), teamarea.getY());
-            //move((int)(Math.random() * 5));
-        }
-        
-       // TeamArea portal = (TeamArea) getOneIntersectingObject(TeamArea.class);
-        //if(portal != null){
-          //  MyWorld my = (MyWorld) getWorld();
-            //Rearea rearea = my.getRearea();
-          //  setLocation(rearea.getX(), rearea.getY());
-        }
-        // Add your action code here.
+    }
+}
