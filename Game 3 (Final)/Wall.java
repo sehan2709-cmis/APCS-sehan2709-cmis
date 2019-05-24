@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Wall extends Actor
 {
-    int speed = 5;
+    int speed = (int)(Math.random()*(9))+3;
 
     public Wall()
     {
-        this(80,100);
+        this(100,80);
     }
 
     public Wall(int w, int h)

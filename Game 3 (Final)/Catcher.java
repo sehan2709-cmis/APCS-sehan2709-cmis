@@ -1,21 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class AnimalIII here.
+ * Write a description of class catcher here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Animal extends Actor
+public class Catcher extends Actor
 {
-    private Actor target;
+   private Actor target;
     private boolean wandering = true;
     
-    public Animal(Actor target){
+    public Catcher(Actor target){
         this.target = target;
     }
     
-    public Animal(int w, int h)
+    public Catcher(int w, int h)
     {
         GreenfootImage image = getImage();
         image.scale(w,h);
@@ -33,7 +33,7 @@ public class Animal extends Actor
                     turn((int)(Math.random() * 45));
                 }
             }
-            move((int)(Math.random() * 5));
+            move((int)(Math.random() * 6));
             if(isAtEdge()){
                 turnTowards(300,200);
                 turn((int)(Math.random() * 360));
@@ -42,7 +42,7 @@ public class Animal extends Actor
             turnTowards(target.getX(), target.getY());
             if(!intersects(target) && ((getX() > 50 && getX() < 1150) && ( getY() > 50 && getY() < 550 )))
             {
-                move((int)(Math.random() * 15));
+                move((int)(Math.random() * 6));
             }
         }
         }   
