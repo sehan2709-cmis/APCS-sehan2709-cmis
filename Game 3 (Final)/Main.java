@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Main extends Actor
 {
+    private int score = 0;
+
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
@@ -23,6 +25,10 @@ public class Main extends Actor
         {
             setLocation(400, 300);
         }
+        else if((getOneIntersectingObject (Catcher.class) != null))
+        {
+            setLocation(400, 300);
+        }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
             setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
@@ -30,11 +36,22 @@ public class Main extends Actor
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
+            score++;
+            setLocation(800, 300);
+            Enemy head = new Enemy(TeamArea.class);
+            addObject(head, 800, 300);
+            Catcher catcher = new Catcher(head);
+            addObject(catcher, 50, 50);
+        }
+        getWorld().showText("Team Score: " + score, 100, 10);
+        move();
+
+        if(score == 4)
+        {
             Victory end = new Victory();
             getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
             Greenfoot.stop();
         }
-        move();
     }    
 
     public void move() {

@@ -31,15 +31,6 @@ public class MyWorld extends World
         
         head1 = new Enemy((Actor)teamarea);
         addObject(head1, 800, 300);
-        head2 = new Enemy((Actor)teamarea);
-        addObject(head2, 800, 300);
-        head3 = new Enemy((Actor)teamarea);
-        addObject(head3, 800, 300);
-        
-        Team team = new Team((Actor)area);
-        addObject(team, 400, 300);
-        Team teamI = new Team((Actor)area);
-        addObject(teamI, 400, 300);
         
         Animal pig = new Animal(re);
         addObject(pig, 600, 300);
@@ -48,16 +39,8 @@ public class MyWorld extends World
         
         Catcher catcher1 = new Catcher(main);
         addObject(catcher1, 1150, 550);
-        Catcher catcher2 = new Catcher(team);
-        addObject(catcher2, 1150, 50);
-        Catcher catcher3 = new Catcher(teamI);
-        addObject(catcher3, 1150, 50);
         Catcher catcher4 = new Catcher(head1);
         addObject(catcher4, 50, 550);
-        Catcher catcher5 = new Catcher(head2);
-        addObject(catcher5, 50, 50);
-        Catcher catcher6 = new Catcher(head3);
-        addObject(catcher6, 50, 50);
     }
     
     public void act(){

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
+    private int escore = 0;
     private Actor target;
     private boolean wandering = true;
     public Enemy(Actor target){
@@ -25,6 +26,10 @@ public class Enemy extends Actor
         {
             setLocation(800, 300);
         }
+        else if((getOneIntersectingObject (Catcher.class) != null))
+        {
+            setLocation(800, 300);
+        }
         else if((getOneIntersectingObject (Main.class) != null) || (getOneIntersectingObject (Team.class) != null))
         {
             setLocation(800, 300);
@@ -36,11 +41,20 @@ public class Enemy extends Actor
         }
         else if(getOneIntersectingObject (TeamArea.class) != null)
         {
+            escore++;
+            setLocation(800, 300);
+            Enemy head = new Enemy(Team.class);
+            addObject(head, 400, 300);
+            Catcher catcher = new Catcher(head);
+            addObject(catcher, 1150, 50);
+        }
+        getWorld().showText("Enemy Score: " + escore, 1090, 10);
+        if (escore == 4)
+        {
             GameOver end = new GameOver();
             getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
             Greenfoot.stop();
         }
-        
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
             if(Math.random() > 0.4){
@@ -50,7 +64,7 @@ public class Enemy extends Actor
                     turn((int)(Math.random() * 45));
                 }
             }
-            move((int)(Math.random() * 7));
+            move((int)(Math.random() * 10));
             if(isAtEdge()){
                 turnTowards(300,200);
                 turn((int)(Math.random() * 360));
@@ -59,7 +73,7 @@ public class Enemy extends Actor
             turnTowards(target.getX(), target.getY());
             if(!intersects(target) && ((getX() > 50 && getX() < 1150) && ( getY() > 50 && getY() < 550 )))
             {
-                move((int)(Math.random() * 7));
+                move((int)(Math.random() * 10));
             }
         }
     }

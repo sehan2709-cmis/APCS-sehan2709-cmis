@@ -10,6 +10,7 @@ public class Team extends Actor
 {
     private Actor target;
     private boolean wandering = true;
+    
     public Team(Actor target){
         this.target = target;
     }
@@ -26,6 +27,10 @@ public class Team extends Actor
             setLocation(400, 300);
         }
         else if((getOneIntersectingObject (Enemy.class) != null))
+        {
+            setLocation(400, 300);
+        }
+        else if((getOneIntersectingObject (Catcher.class) != null))
         {
             setLocation(400, 300);
         }
@@ -50,7 +55,7 @@ public class Team extends Actor
                     turn((int)(Math.random() * 45));
                 }
             }
-            move((int)(Math.random() * 13));
+            move((int)(Math.random() * 5));
             if(isAtEdge()){
                 turnTowards(300,200);
                 turn((int)(Math.random() * 360));
@@ -59,8 +64,8 @@ public class Team extends Actor
             turnTowards(target.getX(), target.getY());
             if(!intersects(target) && ((getX() > 50 && getX() < 1150) && ( getY() > 50 && getY() < 550 )))
             {
-                move((int)(Math.random() * 14));
+                move((int)(Math.random() * 5));
             }
         }
-        } 
+    } 
 }
