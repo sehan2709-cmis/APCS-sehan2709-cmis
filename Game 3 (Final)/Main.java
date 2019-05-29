@@ -31,15 +31,19 @@ public class Main extends Actor
         }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
+            setLocation((int)(Math.random()*(350))+50, (int)(Math.random() * 500)+50);
             animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+            score += 1;
+            MyWorld w = (MyWorld) getWorld();
+            Enemy enemy = new Enemy(w.getTeamArea());
+            getWorld().addObject(enemy, 800, 300);
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
-            score++;
+            score += 2;
             setLocation(400, 300);
             MyWorld w = (MyWorld) getWorld();
-            int y = (int)(Math.random() * 3)+1;
+            int y = (int)(Math.random() * 2)+1;
             for(int x = 0; x < y; x++)
             {
                 Enemy enemy = new Enemy(w.getTeamArea());
@@ -49,7 +53,7 @@ public class Main extends Actor
         getWorld().showText("Team Score: " + score, 100, 10);
         move();
 
-        if(score == 4)
+        if(score == 10)
         {
             Greenfoot.setWorld(new GG());
         }

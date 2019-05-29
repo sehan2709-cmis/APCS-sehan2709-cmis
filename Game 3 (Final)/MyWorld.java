@@ -40,15 +40,15 @@ public class MyWorld extends World
         head1 = new Enemy((Actor)area);
         addObject(head1, 800, 300);
         
-        Animal pig = new Animal(re);
-        addObject(pig, 600, 300);
-        Animal pig2 = new Animal(rea);
-        addObject(pig2,600, 300);
-        
         Catcher catcher1 = new Catcher(main);
         addObject(catcher1, 1150, 550);
-        Catcher catcher4 = new Catcher(head1);
-        addObject(catcher4, 50, 550);
+        Catcher catcher2 = new Catcher(head1);
+        addObject(catcher2, 50, 550);
+        
+        Animal pig = new Animal(catcher1);
+        addObject(pig, 600, 300);
+        Animal pig2 = new Animal(catcher2);
+        addObject(pig2,600, 300);
     }
     
     public TeamArea getTeamArea()

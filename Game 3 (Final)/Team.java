@@ -10,7 +10,7 @@ public class Team extends Actor
 {
     private Actor target;
     private boolean wandering = true;
-    
+
     public Team(Actor target){
         this.target = target;
     }
@@ -36,23 +36,28 @@ public class Team extends Actor
         }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
+            setLocation((int)(Math.random()*(350))+50, (int)(Math.random() * 500)+50);
             animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+            MyWorld w = (MyWorld) getWorld();
+            int x = w.getMain().getScore();
+            w.getMain().setScore(x+1);
+            Enemy enemy = new Enemy(w.getTeamArea());
+            getWorld().addObject(enemy, 800, 300);
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
             MyWorld w = (MyWorld) getWorld();
             int x = w.getMain().getScore();
-            w.getMain().setScore(x+1);
+            w.getMain().setScore(x+2);
             setLocation(400, 300);
-            int y = (int)(Math.random() * 3)+1;
+            int y = (int)(Math.random() * 2)+1;
             for(int z = 0; z < y; z++)
             {
                 Enemy enemy = new Enemy(w.getTeamArea());
                 getWorld().addObject(enemy, 800, 300);
             }
         }
-        
+
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
             if(Math.random() > 0.4){

@@ -8,13 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Catcher extends Actor
 {
-   private Actor target;
+    private Actor target;
     private boolean wandering = true;
-    
+
     public Catcher(Actor target){
         this.target = target;
     }
-    
+
     public Catcher(int w, int h)
     {
         GreenfootImage image = getImage();
@@ -45,11 +45,7 @@ public class Catcher extends Actor
         {
             setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
         }
-        else if(getOneIntersectingObject (Animal.class) != null)
-        {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
-            animal.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 500)+50);
-        }
+        
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
             if(Math.random() > 0.4){
@@ -71,5 +67,5 @@ public class Catcher extends Actor
                 move((int)(Math.random() * 8));
             }
         }
-        }   
+    } 
 }

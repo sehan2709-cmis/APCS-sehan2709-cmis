@@ -37,17 +37,22 @@ public class Enemy extends Actor
         }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
+            setLocation((int)(Math.random()*(350))+800, (int)(Math.random() * 500)+50);
             animal.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 500)+50);
+            int escore = scre.getScore().getEscore();
+            scre.getScore().setEscore(escore + 1);
+            MyWorld w = (MyWorld) getWorld();
+            Team team = new Team(w.getArea());
+            getWorld().addObject(team, 400, 300);
         }
         else if(getOneIntersectingObject (TeamArea.class) != null)
         {
             int escore = scre.getScore().getEscore();
-            scre.getScore().setEscore(escore + 1);
-            
+            scre.getScore().setEscore(escore + 2);
+
             setLocation(800, 300);
             MyWorld w = (MyWorld) getWorld();
-            int y = (int)(Math.random() * 3)+1;
+            int y = (int)(Math.random() * 2)+1;
             for(int x = 0; x < y; x++)
             {
                 Team team = new Team(w.getArea());
@@ -56,7 +61,7 @@ public class Enemy extends Actor
         }
         int escore = scre.getScore().getEscore();
         getWorld().showText("Enemy Score: " + escore, 1090, 10);
-        
+
         if (scre.getScore().getEscore() == 4)
         {
             Greenfoot.setWorld(new BG());
