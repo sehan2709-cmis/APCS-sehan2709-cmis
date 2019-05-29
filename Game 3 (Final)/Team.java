@@ -41,9 +41,16 @@ public class Team extends Actor
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
-            Victory end = new Victory();
-            getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
-            Greenfoot.stop();
+            MyWorld w = (MyWorld) getWorld();
+            int x = w.getMain().getScore();
+            w.getMain().setScore(x+1);
+            setLocation(400, 300);
+            int y = (int)(Math.random() * 3)+1;
+            for(int z = 0; z < y; z++)
+            {
+                Enemy enemy = new Enemy(w.getTeamArea());
+                getWorld().addObject(enemy, 800, 300);
+            }
         }
         
         wandering = Math.random() > .99 ? !wandering : wandering;

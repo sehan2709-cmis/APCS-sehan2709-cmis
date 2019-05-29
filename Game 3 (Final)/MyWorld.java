@@ -9,13 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Enemy head1, head2, head3;
+    TeamArea area;
+    Area earea;
+    Main main;
+    EnemyScore escore;
+    
     int counter = 0;
     
     public MyWorld()
     {    
         super(1200, 600, 1, false);
         
-        Main main = new Main();
+        escore = new EnemyScore();
+        
+        
+        main = new Main();
         addObject(main, 400, 300);
         
         Rearea re = new Rearea();
@@ -23,13 +31,13 @@ public class MyWorld extends World
         TeamRearea rea = new TeamRearea();
         addObject(rea, 400, 300);
         
-        TeamArea teamarea = new TeamArea();
-        addObject(teamarea, 50, 300);
+        area= new TeamArea();
+        addObject(area, 50, 300);
         
-        Area area = new Area();
-        addObject(area, 1150, 300);
+        earea= new Area();
+        addObject(earea, 1150, 300);
         
-        head1 = new Enemy((Actor)teamarea);
+        head1 = new Enemy((Actor)area);
         addObject(head1, 800, 300);
         
         Animal pig = new Animal(re);
@@ -43,9 +51,29 @@ public class MyWorld extends World
         addObject(catcher4, 50, 550);
     }
     
+    public TeamArea getTeamArea()
+    {
+        return this.area;
+    }
+    
+    public Area getArea()
+    {
+        return this.earea;
+    }
+    
+    public Main getMain()
+    {
+        return this.main;
+    }
+    
+    public EnemyScore getScore()
+    {
+        return this.escore;
+    }
+    
     public void act(){
         counter++;
-        if(counter == 100)
+        if(counter == 150)
         {
             double out = (Math.random()*(2))+1;
             for(int cal = 0; cal < out; cal++)
@@ -60,7 +88,7 @@ public class MyWorld extends World
                 
             }
         }
-        if(counter == 200)
+        if(counter == 300)
         {
             double out = (Math.random()*(0))+1;
             for(int cal = 0; cal < out; cal++)
@@ -74,7 +102,7 @@ public class MyWorld extends World
                 System.out.println(counter);
             }
         }
-        if(counter == 300)
+        if(counter == 400)
         {
             double out = (Math.random()*(1))+1;
             for(int cal = 0; cal < out; cal++)
@@ -88,7 +116,7 @@ public class MyWorld extends World
                 System.out.println(counter);
             }
         }
-        if(counter == 400)
+        if(counter == 450)
         {
             double out = (Math.random()*(2))+1;
             for(int cal = 0; cal < out; cal++)
@@ -103,7 +131,7 @@ public class MyWorld extends World
                 
             }
         }
-        if(counter == 600)
+        if(counter == 800)
         {
             double out = (Math.random()*(3))+1;
             for(int cal = 0; cal < out; cal++)

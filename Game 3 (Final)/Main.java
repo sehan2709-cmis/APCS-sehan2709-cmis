@@ -37,41 +37,53 @@ public class Main extends Actor
         else if(getOneIntersectingObject (Area.class) != null)
         {
             score++;
-            setLocation(800, 300);
-            Enemy head = new Enemy(TeamArea.class);
-            addObject(head, 800, 300);
-            Catcher catcher = new Catcher(head);
-            addObject(catcher, 50, 50);
+            setLocation(400, 300);
+            MyWorld w = (MyWorld) getWorld();
+            int y = (int)(Math.random() * 3)+1;
+            for(int x = 0; x < y; x++)
+            {
+                Enemy enemy = new Enemy(w.getTeamArea());
+                getWorld().addObject(enemy, 800, 300);
+            }
         }
         getWorld().showText("Team Score: " + score, 100, 10);
         move();
 
         if(score == 4)
         {
-            Victory end = new Victory();
-            getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
-            Greenfoot.stop();
+            Greenfoot.setWorld(new GG());
         }
     }    
+
+    public int getScore()
+    {
+        int x = score;
+        return x;
+    }
+
+    public void setScore(int x)
+    {
+        score = x;
+    }
 
     public void move() {
         int y = getY();
         int x = getX();
         if(Greenfoot.isKeyDown("a") && getX() > 50)
         {
-            x -= ((int)(Math.random() * 5));
+            x -= ((int)(Math.random() * 7));
         }
         if(Greenfoot.isKeyDown("d") && getX() < 1150)
         {
-            x += ((int)(Math.random() * 5));
+            x += ((int)(Math.random() * 7));
         }
         if(Greenfoot.isKeyDown("w") && getY() > 50)
         {
-            y -= ((int)(Math.random() * 5));
+            y -= ((int)(Math.random() * 7));
         }
         if(Greenfoot.isKeyDown("s") && getY() < 550)
         {
-            y += ((int)(Math.random() * 5));
+            y += ((int)(Math.random() * 7));
         }
         setLocation(x,y);
     }

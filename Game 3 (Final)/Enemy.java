@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
-    private int escore = 0;
     private Actor target;
     private boolean wandering = true;
+
     public Enemy(Actor target){
         this.target = target;
     }
@@ -18,6 +18,7 @@ public class Enemy extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
+        MyWorld scre = (MyWorld) getWorld();
         if((getOneIntersectingObject (Wall.class) != null) || (getOneIntersectingObject (Wall2.class) != null))
         {
             setLocation(800, 300);
@@ -41,19 +42,24 @@ public class Enemy extends Actor
         }
         else if(getOneIntersectingObject (TeamArea.class) != null)
         {
-            escore++;
+            int escore = scre.getScore().getEscore();
+            scre.getScore().setEscore(escore + 1);
+            
             setLocation(800, 300);
-            Enemy head = new Enemy(Team.class);
-            addObject(head, 400, 300);
-            Catcher catcher = new Catcher(head);
-            addObject(catcher, 1150, 50);
+            MyWorld w = (MyWorld) getWorld();
+            int y = (int)(Math.random() * 3)+1;
+            for(int x = 0; x < y; x++)
+            {
+                Team team = new Team(w.getArea());
+                getWorld().addObject(team, 400, 300);
+            }
         }
+        int escore = scre.getScore().getEscore();
         getWorld().showText("Enemy Score: " + escore, 1090, 10);
-        if (escore == 4)
+        
+        if (scre.getScore().getEscore() == 4)
         {
-            GameOver end = new GameOver();
-            getWorld().addObject(end, getWorld().getWidth() / 2, getWorld().getHeight()/2);
-            Greenfoot.stop();
+            Greenfoot.setWorld(new BG());
         }
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
@@ -64,7 +70,7 @@ public class Enemy extends Actor
                     turn((int)(Math.random() * 45));
                 }
             }
-            move((int)(Math.random() * 10));
+            move((int)(Math.random() * 9));
             if(isAtEdge()){
                 turnTowards(300,200);
                 turn((int)(Math.random() * 360));
@@ -73,7 +79,7 @@ public class Enemy extends Actor
             turnTowards(target.getX(), target.getY());
             if(!intersects(target) && ((getX() > 50 && getX() < 1150) && ( getY() > 50 && getY() < 550 )))
             {
-                move((int)(Math.random() * 10));
+                move((int)(Math.random() * 9));
             }
         }
     }
