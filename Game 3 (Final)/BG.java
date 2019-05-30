@@ -16,6 +16,7 @@ public class BG extends World
     public BG()
     {    
         super(1200, 600, 1); 
+        Greenfoot.playSound("Sad Violin - MLG Sound Effects (HD).wav");
         BGG end = new BGG();
         addObject(end, 600, 300);
         Greenfoot.stop();

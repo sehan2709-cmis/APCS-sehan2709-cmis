@@ -18,17 +18,17 @@ public class Team extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
-        
+        MyWorld scre = (MyWorld) getWorld();
         Actor Wall;
         Actor Wall2;
         Actor Wall3;
         Actor Wall4;
-        
+
         Wall = getOneObjectAtOffset(0, 0, Wall.class);
         Wall2 = getOneObjectAtOffset(0, 0, Wall2.class);
         Wall3 = getOneObjectAtOffset(0, 0, Wall3.class);
         Wall4 = getOneObjectAtOffset(0, 0, Wall4.class);
-        
+
         if((getOneIntersectingObject (Wall.class) != null) || (getOneIntersectingObject (Wall2.class) != null))
         {
             World detect;
@@ -56,7 +56,7 @@ public class Team extends Actor
             int x = w.getMain().getScore();
             if (x > 0)
             {
-                w.getMain().setScore(x-1);
+                w.getMain().setScore(x-2);
             }
             else if( x < 0)
             {
@@ -65,26 +65,22 @@ public class Team extends Actor
         }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation(800, 300);
-            animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+            setLocation(400, 300);
             MyWorld w = (MyWorld) getWorld();
+            animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
             int x = w.getMain().getScore();
-            w.getMain().setScore(x+2);
-            Enemy enemy = new Enemy(w.getTeamArea());
-            getWorld().addObject(enemy, 800, 300);
+            if(scre.getScore().getEscore() % 4 == 0)
+            {
+                Enemy enemy = new Enemy(scre.getTeamArea());
+                getWorld().addObject(enemy, 800, 300);
+            }
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
             MyWorld w = (MyWorld) getWorld();
             int x = w.getMain().getScore();
-            w.getMain().setScore(x+3);
+            w.getMain().setScore(x+5);
             setLocation(400, 300);
-            int y = (int)(Math.random() * 2)+1;
-            for(int z = 0; z < y; z++)
-            {
-                Enemy enemy = new Enemy(w.getTeamArea());
-                getWorld().addObject(enemy, 800, 300);
-            }
         }
 
         wandering = Math.random() > .99 ? !wandering : wandering;
@@ -96,7 +92,7 @@ public class Team extends Actor
                     turn((int)(Math.random() * 45));
                 }
             }
-            move((int)(Math.random() * 5));
+            move((int)(Math.random() * 8));
             if(isAtEdge()){
                 turnTowards(300,200);
                 turn((int)(Math.random() * 360));
@@ -105,7 +101,7 @@ public class Team extends Actor
             turnTowards(target.getX(), target.getY());
             if(!intersects(target) && ((getX() > 50 && getX() < 1150) && ( getY() > 50 && getY() < 550 )))
             {
-                move((int)(Math.random() * 5));
+                move((int)(Math.random() * 8));
             }
         }
     } 

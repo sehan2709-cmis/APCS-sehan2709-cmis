@@ -10,11 +10,11 @@ public class Animal extends Actor
 {
     private Actor target;
     private boolean wandering = true;
-    
+
     public Animal(Actor target){
         this.target = target;
     }
-    
+
     public Animal(int w, int h)
     {
         GreenfootImage image = getImage();
@@ -45,5 +45,5 @@ public class Animal extends Actor
                 move((int)(Math.random() * 15));
             }
         }
-        }   
+    }   
 }

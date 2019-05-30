@@ -25,15 +25,7 @@ public class Catcher extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
-        if((getOneIntersectingObject (Wall.class) != null) || (getOneIntersectingObject (Wall2.class) != null))
-        {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
-        }
-        else if((getOneIntersectingObject (Wall3.class) != null) || (getOneIntersectingObject (Wall4.class) != null))
-        {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
-        }
-        else if((getOneIntersectingObject (Team.class) != null))
+        if((getOneIntersectingObject (Team.class) != null))
         {
             setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
         }
@@ -41,11 +33,11 @@ public class Catcher extends Actor
         {
             setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
         }
-        else if((getOneIntersectingObject (Enemy.class) != null) || (getOneIntersectingObject (Team.class) != null))
+        else if(getOneIntersectingObject (Enemy.class) != null)
         {
             setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
         }
-        
+
         wandering = Math.random() > .99 ? !wandering : wandering;
         if(target == null || wandering){
             if(Math.random() > 0.4){

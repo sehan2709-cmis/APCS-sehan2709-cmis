@@ -19,11 +19,12 @@ public class Enemy extends Actor
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
         MyWorld scre = (MyWorld) getWorld();
+
         Actor Wall;
         Actor Wall2;
         Actor Wall3;
         Actor Wall4;
-        
+
         Wall = getOneObjectAtOffset(0, 0, Wall.class);
         Wall2 = getOneObjectAtOffset(0, 0, Wall2.class);
         Wall3 = getOneObjectAtOffset(0, 0, Wall3.class);
@@ -50,7 +51,7 @@ public class Enemy extends Actor
             int escore = scre.getScore().getEscore();
             if (escore > 0)
             {
-                scre.getScore().setEscore(escore - 1);
+                scre.getScore().setEscore(escore - 2);
             }
             else if( escore < 0)
             {
@@ -64,31 +65,29 @@ public class Enemy extends Actor
         else if(getOneIntersectingObject (Animal.class) != null)
         {
             setLocation(800, 300);
-            animal.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 500)+50);
+            animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+
             int escore = scre.getScore().getEscore();
             scre.getScore().setEscore(escore + 2);
-            MyWorld w = (MyWorld) getWorld();
-            Team team = new Team(w.getArea());
-            getWorld().addObject(team, 400, 300);
+
+            if(scre.getMain().getScore() % 4 == 0)
+            {
+                Team team = new Team(scre.getArea());
+                getWorld().addObject(team, 400, 300);
+            }
         }
         else if(getOneIntersectingObject (TeamArea.class) != null)
         {
-            int escore = scre.getScore().getEscore();
-            scre.getScore().setEscore(escore + 3);
-
             setLocation(800, 300);
+            int escore = scre.getScore().getEscore();
+            scre.getScore().setEscore(escore + 5);
             MyWorld w = (MyWorld) getWorld();
             int y = (int)(Math.random() * 2)+1;
-            for(int x = 0; x < y; x++)
-            {
-                Team team = new Team(w.getArea());
-                getWorld().addObject(team, 400, 300);
-            }
         }
         int escore = scre.getScore().getEscore();
         getWorld().showText("Enemy Score: " + escore, 1090, 10);
 
-        if (scre.getScore().getEscore() >= 30)
+        if (escore >= 30)
         {
             Greenfoot.setWorld(new BG());
         }

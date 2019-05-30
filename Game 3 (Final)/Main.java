@@ -13,42 +13,61 @@ public class Main extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
+        MyWorld scre = (MyWorld) getWorld();
+        
+        if (score < 1)
+            {
+                score = 0;
+            }
+        
         Actor Wall;
         Actor Wall2;
         Actor Wall3;
         Actor Wall4;
-        
+
         Wall = getOneObjectAtOffset(0, 0, Wall.class);
         Wall2 = getOneObjectAtOffset(0, 0, Wall2.class);
         Wall3 = getOneObjectAtOffset(0, 0, Wall3.class);
         Wall4 = getOneObjectAtOffset(0, 0, Wall4.class);
-        
+
         if((getOneIntersectingObject (Wall.class) != null) || (getOneIntersectingObject (Wall2.class) != null))
         {
+            Greenfoot.playSound("Punch sound effect 2.wav");
             World detect;
             detect = getWorld();
             detect.removeObject(Wall);
             detect.removeObject(Wall2);
             setLocation(400, 300);
+            if (score > 0)
+            {
+                score -= 2;
+            }
         }
         else if((getOneIntersectingObject (Wall3.class) != null) || (getOneIntersectingObject (Wall4.class) != null))
         {
+            Greenfoot.playSound("Punch sound effect 2.wav");
             World detect;
             detect = getWorld();
             detect.removeObject(Wall3);
             detect.removeObject(Wall4);
             setLocation(400, 300);
+            if (score > 0)
+            {
+                score -= 2;
+            }
         }
         else if((getOneIntersectingObject (Enemy.class) != null))
         {
+            Greenfoot.playSound("Punch sound effect 2.wav");
             setLocation(400, 300);
         }
         else if((getOneIntersectingObject (Catcher.class) != null))
         {
+            Greenfoot.playSound("Punch sound effect 2.wav");
             setLocation(400, 300);
             if (score > 0)
             {
-                score -= 1;
+                score -= 2;
             }
             else if( score < 0)
             {
@@ -57,24 +76,21 @@ public class Main extends Actor
         }
         else if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation((int)(Math.random()*(350))+50, (int)(Math.random() * 500)+50);
+            Greenfoot.playSound("MAGIC WAND - sound effect.wav");
+            setLocation(400, 300);
             animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
             score += 2;
-            MyWorld w = (MyWorld) getWorld();
-            Enemy enemy = new Enemy(w.getTeamArea());
-            getWorld().addObject(enemy, 800, 300);
+            if(scre.getScore().getEscore()%4 == 0)
+            {
+                Enemy enemy = new Enemy(scre.getTeamArea());
+                getWorld().addObject(enemy, 800, 300);
+            }
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
-            score += 3;
+            score += 5;
             setLocation(400, 300);
             MyWorld w = (MyWorld) getWorld();
-            int y = (int)(Math.random() * 2)+1;
-            for(int x = 0; x < y; x++)
-            {
-                Enemy enemy = new Enemy(w.getTeamArea());
-                getWorld().addObject(enemy, 800, 300);
-            }
         }
         getWorld().showText("Team Score: " + score, 100, 10);
         move();

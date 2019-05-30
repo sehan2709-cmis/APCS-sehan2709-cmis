@@ -16,6 +16,8 @@ public class GG extends World
     public GG()
     {    
         super(1200, 600, 1); 
+        Greenfoot.playSound("Clapping Sound Effect.wav");
+        Greenfoot.playSound("Kids Cheering - Gaming Sound Effect (HD).wav");
         GGG end = new GGG();
         addObject(end, 600, 300);
         Greenfoot.stop();

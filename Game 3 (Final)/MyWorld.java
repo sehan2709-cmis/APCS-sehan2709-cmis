@@ -17,7 +17,7 @@ public class MyWorld extends World
     int counter = 0;
 
     public MyWorld()
-    {    
+    {
         super(1200, 600, 1, false);
 
         escore = new EnemyScore();
@@ -49,6 +49,97 @@ public class MyWorld extends World
         Animal pig2 = new Animal(catcher2);
         addObject(pig2,600, 300);
     }
+    
+    public void act(){
+        counter++;
+        int random = 5;
+        
+        if(counter == 50)
+        {
+            random = (int)(Math.random() * 4);
+        }
+        
+        if(random == 0)
+        {
+            for(int cal = 0; cal < 2; cal++)
+            {
+                Wall car = new Wall();
+
+                GreenfootImage image = car.getImage();
+                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+                addObject(car, (int)(tall), 600);
+            }
+            random = 5;
+            counter = 0;
+        }
+        if(random == 1)
+        {
+            for(int cal = 0; cal < 2; cal++)
+            {
+                Wall2 car = new Wall2();
+
+                GreenfootImage image = car.getImage();
+                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+                addObject(car, 1200, (int)(tall));
+            }
+            random = 5;
+            counter = 0;
+        }
+        if(random == 2)
+        {
+            for(int cal = 0; cal < 2; cal++)
+            {
+                Wall3 car = new Wall3();
+
+                GreenfootImage image = car.getImage();
+                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+                addObject(car, (int)(tall), 0);
+            }
+            random = 5;
+            counter = 0;
+        }
+        if(random == 3)
+        {
+            for(int cal = 0; cal < 2; cal++)
+            {
+                Wall4 car = new Wall4();
+
+                GreenfootImage image = car.getImage();
+                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+                addObject(car, 0, (int)(tall));
+            }
+            random = 5;
+            counter = 0;
+        }
+        if(random == 4)
+        {
+            Wall car = new Wall();
+
+            GreenfootImage image = car.getImage();
+            double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+            addObject(car, (int)(tall), 600);
+
+            Wall2 car2 = new Wall2();
+
+            GreenfootImage image2 = car2.getImage();
+            double tall2 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+            addObject(car2, 1200, (int)(tall2));
+
+            Wall3 car3 = new Wall3();
+
+            GreenfootImage image3 = car3.getImage();
+            double tall3 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+            addObject(car3, (int)(tall3), 0);
+            Wall4 car4 = new Wall4();
+
+            GreenfootImage image4= car4.getImage();
+            double tall4 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
+            addObject(car4, 0, (int)(tall4));
+            random = 5;
+            counter = 0;
+        }
+        counter = 0;
+    }
 
     public TeamArea getTeamArea()
     {
@@ -68,97 +159,5 @@ public class MyWorld extends World
     public EnemyScore getScore()
     {
         return this.escore;
-    }
-
-    public void act(){
-        counter++;
-        int random = 5;
-        if(counter == 100)
-        {
-            random = (int)(Math.random() * 5);
-        }
-        if(random == 0)
-        {
-            double out = (Math.random()*(2))+1;
-            for(int cal = 0; cal < out; cal++)
-            {
-                Wall car = new Wall();
-
-                GreenfootImage image = car.getImage();
-                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car, (int)(tall), 600);
-                random = 5;
-            }
-        }
-        if(random == 1)
-        {
-            double out = (Math.random()*(0))+1;
-            for(int cal = 0; cal < out; cal++)
-            {
-                Wall2 car = new Wall2();
-
-                GreenfootImage image = car.getImage();
-                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car, 1200, (int)(tall));
-                random = 5;
-            }
-        }
-        if(random == 2)
-        {
-            double out = (Math.random()*(1))+1;
-            for(int cal = 0; cal < out; cal++)
-            {
-                Wall3 car = new Wall3();
-
-                GreenfootImage image = car.getImage();
-                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car, (int)(tall), 0);
-                random = 5;
-            }
-        }
-        if(random == 3)
-        {
-            double out = (Math.random()*(2))+1;
-            for(int cal = 0; cal < out; cal++)
-            {
-                Wall4 car = new Wall4();
-
-                GreenfootImage image = car.getImage();
-                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car, 0, (int)(tall));
-                random = 5;
-            }
-        }
-        if(random == 4)
-        {
-            double out = (Math.random()*(3))+1;
-            for(int cal = 0; cal < out; cal++)
-            {
-                Wall car = new Wall();
-
-                GreenfootImage image = car.getImage();
-                double tall = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car, (int)(tall), 600);
-
-                Wall2 car2 = new Wall2();
-
-                GreenfootImage image2 = car2.getImage();
-                double tall2 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car2, 1200, (int)(tall2));
-
-                Wall3 car3 = new Wall3();
-
-                GreenfootImage image3 = car3.getImage();
-                double tall3 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car3, (int)(tall3), 0);
-
-                Wall4 car4 = new Wall4();
-
-                GreenfootImage image4= car4.getImage();
-                double tall4 = Math.random()*((getHeight()/5 * 3) + (getHeight()/2));
-                addObject(car4, 0, (int)(tall4));
-                random = 5;
-            }
-        }
     }
 }

@@ -12,7 +12,10 @@ public class EnemyScore extends Actor
     
     public void act() 
     {
-        
+        if(escore < 1)
+        {
+            escore = 0;
+        }
     }
     
     public int getEscore()

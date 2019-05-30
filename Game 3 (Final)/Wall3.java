@@ -24,6 +24,7 @@ public class Wall3 extends Actor
 
     public void act() 
     {
+        
         MyWorld scre = (MyWorld) getWorld();
 
         Actor Team;

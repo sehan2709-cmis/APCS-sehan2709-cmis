@@ -65,6 +65,7 @@ public class Wall extends Actor
                 scre.getScore().setEscore(0);
             }
         }
+        
         GreenfootImage image = getImage();
         setLocation( getX(), getY()- speed);
     }      
