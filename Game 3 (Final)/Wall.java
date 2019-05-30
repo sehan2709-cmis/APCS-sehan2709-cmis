@@ -24,6 +24,47 @@ public class Wall extends Actor
 
     public void act() 
     {
+        MyWorld scre = (MyWorld) getWorld();
+
+        Actor Team;
+        Actor Enemy;
+
+        Team = getOneObjectAtOffset(0, 0, Team.class);
+        Enemy = getOneObjectAtOffset(0, 0, Enemy.class);
+
+        if(getOneIntersectingObject (Team.class) != null)
+        {
+            World detect;
+            detect = getWorld();
+            detect.removeObject(Team);
+            setLocation(400, 300);
+            MyWorld w = (MyWorld) getWorld();
+            int x = w.getMain().getScore();
+            if (x > 0)
+            {
+                w.getMain().setScore(x-1);
+            }
+            else if( x < 0)
+            {
+                w.getMain().setScore(0);
+            }
+        }
+        else if(getOneIntersectingObject (Enemy.class) != null)
+        {
+            World detect;
+            detect = getWorld();
+            detect.removeObject(Enemy);
+            setLocation(400, 300);
+            int escore = scre.getScore().getEscore();
+            if (escore > 0)
+            {
+                scre.getScore().setEscore(escore - 1);
+            }
+            else if( escore < 0)
+            {
+                scre.getScore().setEscore(0);
+            }
+        }
         GreenfootImage image = getImage();
         setLocation( getX(), getY()- speed);
     }      
