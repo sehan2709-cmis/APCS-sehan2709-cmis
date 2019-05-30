@@ -18,8 +18,9 @@ public class Enemy extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
-        MyWorld scre = (MyWorld) getWorld();
+        Catcher catchh = (Catcher) getOneIntersectingObject(Catcher.class);
 
+        MyWorld scre = (MyWorld) getWorld();
         Actor Wall;
         Actor Wall2;
         Actor Wall3;
@@ -49,6 +50,7 @@ public class Enemy extends Actor
         {
             setLocation(800, 300);
             int escore = scre.getScore().getEscore();
+            catchh.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 600)+50);
             if (escore > 0)
             {
                 scre.getScore().setEscore(escore - 2);

@@ -25,17 +25,22 @@ public class Catcher extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
-        if((getOneIntersectingObject (Team.class) != null))
+        MyWorld scre = (MyWorld) getWorld();
+        if(getOneIntersectingObject (Animal.class) != null)
         {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
-        }
-        else if((getOneIntersectingObject (Main.class) != null) || (getOneIntersectingObject (Team.class) != null))
-        {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
-        }
-        else if(getOneIntersectingObject (Enemy.class) != null)
-        {
-            setLocation((int)(Math.random()*(1000))+50, (int)(Math.random() * 500)+50);
+            int escore = scre.getScore().getEscore();
+            if (escore > 0)
+            {
+                scre.getScore().setEscore(escore - 1);
+            }
+            
+            int x = scre.getMain().getScore();
+            if (scre.getMain().getScore() > 0)
+            {
+                scre.getMain().setScore(x - 1);
+            }
+            animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
+
         }
 
         wandering = Math.random() > .99 ? !wandering : wandering;

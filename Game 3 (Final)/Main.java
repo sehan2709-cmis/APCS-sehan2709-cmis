@@ -13,13 +13,15 @@ public class Main extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
+        Catcher catchh = (Catcher) getOneIntersectingObject(Catcher.class);
+
         MyWorld scre = (MyWorld) getWorld();
-        
+
         if (score < 1)
-            {
-                score = 0;
-            }
-        
+        {
+            score = 0;
+        }
+
         Actor Wall;
         Actor Wall2;
         Actor Wall3;
@@ -41,6 +43,7 @@ public class Main extends Actor
             if (score > 0)
             {
                 score -= 2;
+                scre.setMainPoint(-2);
             }
         }
         else if((getOneIntersectingObject (Wall3.class) != null) || (getOneIntersectingObject (Wall4.class) != null))
@@ -54,6 +57,7 @@ public class Main extends Actor
             if (score > 0)
             {
                 score -= 2;
+                scre.setMainPoint(-2);
             }
         }
         else if((getOneIntersectingObject (Enemy.class) != null))
@@ -65,9 +69,11 @@ public class Main extends Actor
         {
             Greenfoot.playSound("Punch sound effect 2.wav");
             setLocation(400, 300);
+            catchh.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 600)+50);
             if (score > 0)
             {
                 score -= 2;
+                scre.setMainPoint(-2);
             }
             else if( score < 0)
             {
@@ -80,6 +86,7 @@ public class Main extends Actor
             setLocation(400, 300);
             animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
             score += 2;
+            scre.setMainPoint(2);
             if(scre.getScore().getEscore()%4 == 0)
             {
                 Enemy enemy = new Enemy(scre.getTeamArea());
@@ -89,6 +96,7 @@ public class Main extends Actor
         else if(getOneIntersectingObject (Area.class) != null)
         {
             score += 5;
+            scre.setMainPoint(5);
             setLocation(400, 300);
             MyWorld w = (MyWorld) getWorld();
         }

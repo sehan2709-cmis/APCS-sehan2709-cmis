@@ -8,11 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GG extends World
 {
-
-    /**
-     * Constructor for objects of class GG.
-     * 
-     */
+    
     public GG()
     {    
         super(1200, 600, 1); 
@@ -20,6 +16,8 @@ public class GG extends World
         Greenfoot.playSound("Kids Cheering - Gaming Sound Effect (HD).wav");
         GGG end = new GGG();
         addObject(end, 600, 300);
+        String aa = MyWorld.getMainPoint();
+        showText("You have made " + aa + " point for the game!", 600, 200);
         Greenfoot.stop();
     }
 }

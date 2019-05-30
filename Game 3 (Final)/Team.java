@@ -18,6 +18,7 @@ public class Team extends Actor
     public void act() 
     {
         Animal animal = (Animal) getOneIntersectingObject(Animal.class);
+        Catcher catchh = (Catcher) getOneIntersectingObject(Catcher.class);
         MyWorld scre = (MyWorld) getWorld();
         Actor Wall;
         Actor Wall2;
@@ -54,6 +55,7 @@ public class Team extends Actor
             setLocation(400, 300);
             MyWorld w = (MyWorld) getWorld();
             int x = w.getMain().getScore();
+            catchh.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 600)+50);
             if (x > 0)
             {
                 w.getMain().setScore(x-2);

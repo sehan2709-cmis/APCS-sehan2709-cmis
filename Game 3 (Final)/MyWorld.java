@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    Enemy head1, head2, head3;
+    Enemy head1;
     TeamArea area;
     Area earea;
     Main main;
     EnemyScore escore;
 
+    private static int MainPoint = 0;
     int counter = 0;
 
     public MyWorld()
@@ -159,5 +160,16 @@ public class MyWorld extends World
     public EnemyScore getScore()
     {
         return this.escore;
+    }
+    
+    public static String getMainPoint()
+    {
+        String x = Integer.toString(MainPoint);
+        return x;
+    }
+    
+    public void setMainPoint(int x)
+    {
+        MainPoint += x;
     }
 }
