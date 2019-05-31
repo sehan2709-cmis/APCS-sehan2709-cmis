@@ -28,14 +28,14 @@ public class Catcher extends Actor
         MyWorld scre = (MyWorld) getWorld();
         if(getOneIntersectingObject (Animal.class) != null)
         {
-            int escore = scre.getScore().getEscore();
-            if (escore > 0)
+            int y = scre.getEMain().getScore();
+            if (y > 0)
             {
-                scre.getScore().setEscore(escore - 1);
+                scre.getMain().setScore(y - 1);
             }
             
             int x = scre.getMain().getScore();
-            if (scre.getMain().getScore() > 0)
+            if (x > 0)
             {
                 scre.getMain().setScore(x - 1);
             }

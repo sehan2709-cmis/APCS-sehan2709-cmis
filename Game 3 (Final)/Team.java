@@ -36,7 +36,6 @@ public class Team extends Actor
             detect = getWorld();
             detect.removeObject(Wall);
             detect.removeObject(Wall2);
-            setLocation(400, 300);
         }
         else if((getOneIntersectingObject (Wall3.class) != null) || (getOneIntersectingObject (Wall4.class) != null))
         {
@@ -44,7 +43,6 @@ public class Team extends Actor
             detect = getWorld();
             detect.removeObject(Wall3);
             detect.removeObject(Wall4);
-            setLocation(400, 300);
         }
         else if((getOneIntersectingObject (Enemy.class) != null))
         {
@@ -58,7 +56,7 @@ public class Team extends Actor
             catchh.setLocation((int)(Math.random() * 1000)+50, (int)(Math.random() * 600)+50);
             if (x > 0)
             {
-                w.getMain().setScore(x-2);
+                w.getMain().setScore(x-1);
             }
             else if( x < 0)
             {
@@ -71,18 +69,15 @@ public class Team extends Actor
             MyWorld w = (MyWorld) getWorld();
             animal.setLocation((int)(Math.random() * 1000), (int)(Math.random() * 600));
             int x = w.getMain().getScore();
-            if(scre.getScore().getEscore() % 4 == 0)
-            {
-                Enemy enemy = new Enemy(scre.getTeamArea());
+            scre.getMain().setScore(x+1);
+            Enemy enemy = new Enemy(scre.getTeamArea());
                 getWorld().addObject(enemy, 800, 300);
-            }
         }
         else if(getOneIntersectingObject (Area.class) != null)
         {
-            MyWorld w = (MyWorld) getWorld();
-            int x = w.getMain().getScore();
-            w.getMain().setScore(x+5);
             setLocation(400, 300);
+            int x = scre.getMain().getScore();
+            scre.getMain().setScore(x+3);
         }
 
         wandering = Math.random() > .99 ? !wandering : wandering;

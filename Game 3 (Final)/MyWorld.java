@@ -8,11 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    Enemy head1;
     TeamArea area;
     Area earea;
     Main main;
-    EnemyScore escore;
+    EMain emain;
 
     private static int MainPoint = 0;
     int counter = 0;
@@ -20,8 +19,6 @@ public class MyWorld extends World
     public MyWorld()
     {
         super(1200, 600, 1, false);
-
-        escore = new EnemyScore();
 
         main = new Main();
         addObject(main, 400, 300);
@@ -36,13 +33,13 @@ public class MyWorld extends World
 
         earea= new Area();
         addObject(earea, 1150, 300);
-
-        head1 = new Enemy((Actor)area);
-        addObject(head1, 800, 300);
+        
+        emain = new EMain(area);
+        addObject(emain, 800, 300);
 
         Catcher catcher1 = new Catcher(main);
         addObject(catcher1, 1150, 550);
-        Catcher catcher2 = new Catcher(head1);
+        Catcher catcher2 = new Catcher(emain);
         addObject(catcher2, 50, 550);
 
         Animal pig = new Animal(catcher1);
@@ -55,7 +52,7 @@ public class MyWorld extends World
         counter++;
         int random = 5;
         
-        if(counter == 50)
+        if(counter == 150)
         {
             random = (int)(Math.random() * 4);
         }
@@ -139,7 +136,6 @@ public class MyWorld extends World
             random = 5;
             counter = 0;
         }
-        counter = 0;
     }
 
     public TeamArea getTeamArea()
@@ -157,9 +153,9 @@ public class MyWorld extends World
         return this.main;
     }
 
-    public EnemyScore getScore()
+    public EMain getEMain()
     {
-        return this.escore;
+        return this.emain;
     }
     
     public static String getMainPoint()
